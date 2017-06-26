@@ -1,11 +1,10 @@
 package main
 
 import (
-	_ "github.com/go-wyvern/sensor-window/routers"
 	"github.com/astaxie/beego"
+	_ "github.com/go-wyvern/sensorwindow/routers"
 )
 
 func main() {
 	beego.Run()
 }
-

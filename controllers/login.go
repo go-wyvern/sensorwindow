@@ -2,8 +2,9 @@ package controllers
 
 import (
 	"github.com/astaxie/beego"
-	"github.com/go-wyvern/sensor-window/models"
 	"github.com/jinzhu/gorm"
+
+	"github.com/go-wyvern/sensorwindow/models"
 )
 
 type LoginController struct {
