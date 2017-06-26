@@ -1,0 +1,131 @@
+*{
+	margin:0;
+	padding:0;
+}
+.header-info{
+	width: 100%;
+	height: 50px;
+	background-color: #E7E7E7;
+}
+.header-info .navbar-default, .header-info .navbar{
+	border-color: none;
+	border: none;
+}
+.header-main{
+	height: 142px;
+}
+.index_row{
+	height: 142px;
+	margin-top: 30px;
+}
+.search_form{
+	margin-top: 30px;
+	padding-left: 20px;
+	padding-right: 50px;
+}
+.search_form .search_btn{
+	width: 95px;
+	height: 40px;
+	border-radius: 0px;
+	background: #B71B2C;
+	color: #fff;
+}
+
+.index_icons img{
+	float: right;
+}
+
+.header_nav{
+	height: 36px;
+	border-bottom: 2px solid #B71B2C;
+}
+.header_nav_container{
+	height: 36px;
+	text-align: left;
+}
+.header_nav_container div{
+	height: 36px;
+}
+.header_nav .nav_item{
+	font-size: 16px;
+	font-weight: bold;
+	color: #000;
+	line-height: 36px;
+}
+.all_item_list{
+	background-color: #b1191a;
+}
+.all_item_list .nav_item,.all_item_list .nav_item:hover,.all_item_list .nav_item:focus{
+	color: #fff;
+}
+.nav_item:hover,.nav_item:focus{
+	text-decoration: none;
+	text-decoration-line: unset;
+	color: #B71B2C;
+}
+.header_nav a.nav_item_guarantee{
+	font-size: 12px;
+	font-weight: normal;
+	float: right;
+}
+.main{
+	height: 300px;
+	position: relative;
+}
+#carousel_slider .item img{
+	height: 300px;
+}
+#nav_menu{
+	background-color: #c81623;
+	border: 1px solid #c81623;
+}
+.nav_content{
+	width: 632px;
+	min-height: 313px;
+	position: absolute;
+	left: 17.55%;
+	z-index: 10000;
+	background-color: #fff;
+	border-right: 1px solid #c81623;
+	border-bottom: 1px solid #c81623;
+}
+.nav_menu_ul{
+	margin-left: -15px;
+	margin-right: -16px;
+}
+.nav_menu_ul li{
+	list-style: none;
+	line-height: 31px;
+}
+.nav_menu_ul li a:focus,.nav_menu_ul li a:hover{
+	color: #c81623;
+	background-color:#fff;
+}
+.nav_menu_ul li a{
+	color: #fff;
+	line-height: 31px;
+	width: 100%;
+	display: block;
+	font-size: 13px;
+	text-decoration: none;
+	font-weight: bold;
+	padding-left: 15px;
+}
+#nav_content_ul{
+	padding-left: 5%;
+}
+#nav_content_ul li{
+	width: 25%;
+	display: inline-block;
+	float: left;
+}
+#nav_content_ul li a{
+	color: #000;
+	display: block;
+	line-height: 40px;
+	font-size: 12px;
+	font-weight: normal;
+}
+
+
+
