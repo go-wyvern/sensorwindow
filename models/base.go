@@ -5,6 +5,7 @@ import (
 
 	"github.com/astaxie/beego"
 	"github.com/garyburd/redigo/redis"
+	_ "github.com/go-sql-driver/mysql"
 	"github.com/jinzhu/gorm"
 )
 
@@ -23,9 +24,9 @@ func InitMysql() error {
 		return err
 	}
 	// 设置数据库是否开启debug信息
-	log_mode, _ := beego.AppConfig.Bool("mysql:debug")
-	idle_conns, _ := beego.AppConfig.Int("mysql:idle_conns")
-	max_conns, _ := beego.AppConfig.Int("mysql:max_conns")
+	log_mode, _ := beego.AppConfig.Bool("mysql::debug")
+	idle_conns, _ := beego.AppConfig.Int("mysql::idle_conns")
+	max_conns, _ := beego.AppConfig.Int("mysql::max_conns")
 	Db.LogMode(log_mode)
 	// 设定连接池最大空闲连接数
 	Db.DB().SetMaxIdleConns(idle_conns)
@@ -35,9 +36,10 @@ func InitMysql() error {
 }
 
 func InitReids() error {
-	maxIdle, _ := beego.AppConfig.Int("redis:max_idle")
-	maxActive, _ := beego.AppConfig.Int("redis:max_active")
-	address := beego.AppConfig.String("redis:address")
+	maxIdle, _ := beego.AppConfig.Int("redis::max_idle")
+	maxActive, _ := beego.AppConfig.Int("redis::max_active")
+	address := beego.AppConfig.String("redis::address")
+
 	RedisPool = &redis.Pool{
 		// 最大空闲连接
 		MaxIdle: maxIdle,

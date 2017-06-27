@@ -10,8 +10,8 @@ var submitLoginInput = function () {
     submit_params["username"] = login_username;
     submit_params["password"] = login_password;
     var post_url = "/login";
-    $.post(post_url,submit_params,function(data) {
-        
+    $.post(post_url,submit_params,function (data) {
+        alert(data.Code)
     });
 };
 //重置登录输入框

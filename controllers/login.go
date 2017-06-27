@@ -29,7 +29,7 @@ func (c *LoginController) Login() {
 		var loginResponse = new(LoginReturn)
 		user := c.GetString("username")
 		password := c.GetString("password")
-		fmt.Println(user,password)
+		fmt.Println(user, password)
 		//if passtoken := c.Ctx.GetCookie("passtoken"); passtoken != "" {
 		//	uid, ok, _ := models.GetPassToken(passtoken)
 		//	if ok {
