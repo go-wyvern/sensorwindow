@@ -1,11 +1,15 @@
 package models
 
 import (
+	"time"
+
 	"github.com/astaxie/beego"
+	"github.com/garyburd/redigo/redis"
 	"github.com/jinzhu/gorm"
 )
 
 var Db *gorm.DB
+var RedisPool *redis.Pool
 
 func InitMysql() error {
 	var err error
@@ -30,36 +34,43 @@ func InitMysql() error {
 	return nil
 }
 
-// func InitReids() error {
-// 	maxIdle,_:=beego.AppConfig.Int("redis:max_idle")
-// 	maxActive,_:=beego.AppConfig.Int("redis:max_active")
-// 	address:=beego.AppConfig.String("redis:adress")
-// 	rp = &redis.Pool{
-// 		// 最大空闲连接
-// 		MaxIdle: maxIdle,
-// 		// 最大活跃连接
-// 		MaxActive: maxActive,
-// 		// 超时时间
-// 		IdleTimeout: 30 * time.Second,
-// 		// 连接创建函数
-// 		Dial: func() (redis.Conn, error) {
-// 			conn, err := redis.Dial("tcp", address, redis.DialConnectTimeout(10*time.Second))
-// 			if err != nil {
-// 				return nil, err
-// 			}
-// 			return conn, err
-// 		},
-// 		// 连接测试函数
-// 		TestOnBorrow: func(c redis.Conn, t time.Time) error {
-// 			_, err := c.Do("PING")
-// 			return err
-// 		},
-// 	}
-// 	c := rp.Get()
-// 	defer c.Close()
-// 	err := rp.TestOnBorrow(c, time.Now())
-// 	if err != nil {
-// 		panic(err)
-// 	}
-// 	return rp
-// }
+func InitReids() error {
+	maxIdle, _ := beego.AppConfig.Int("redis:max_idle")
+	maxActive, _ := beego.AppConfig.Int("redis:max_active")
+	address := beego.AppConfig.String("redis:address")
+	RedisPool = &redis.Pool{
+		// 最大空闲连接
+		MaxIdle: maxIdle,
+		// 最大活跃连接
+		MaxActive: maxActive,
+		// 超时时间
+		IdleTimeout: 30 * time.Second,
+		// 连接创建函数
+		Dial: func() (redis.Conn, error) {
+			conn, err := redis.Dial("tcp", address, redis.DialConnectTimeout(10*time.Second))
+			if err != nil {
+				return nil, err
+			}
+			return conn, err
+		},
+		// 连接测试函数
+		TestOnBorrow: func(c redis.Conn, t time.Time) error {
+			_, err := c.Do("PING")
+			return err
+		},
+	}
+	c := RedisPool.Get()
+	defer c.Close()
+	err := RedisPool.TestOnBorrow(c, time.Now())
+	if err != nil {
+		panic(err)
+	}
+	return err
+}
+
+func Rdo(commandName string, args ...interface{}) (reply interface{}, err error) {
+	c := RedisPool.Get()
+	defer c.Close()
+
+	return c.Do(commandName, args...)
+}

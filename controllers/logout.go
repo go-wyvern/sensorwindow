@@ -1,12 +1,17 @@
 package controllers
 
-import "github.com/astaxie/beego"
+import (
+	"github.com/astaxie/beego"
+	"github.com/go-wyvern/sensorwindow/models"
+)
 
 type LogoutController struct {
 	beego.Controller
 }
 
 func (c *LogoutController) Logout() {
-	sess, _ := globalSessions.SessionStart(c.Ctx.ResponseWriter.ResponseWriter, c.Ctx.Request)
-	sess.Delete("")
+	if passtoken := c.Ctx.GetCookie("passtoken"); passtoken != "" {
+		models.DelPassToken(passtoken)
+	}
+
 }

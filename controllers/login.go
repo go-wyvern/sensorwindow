@@ -12,25 +12,38 @@ type LoginController struct {
 }
 
 type LoginReturn struct {
-	Code    int
-	Message string
+	Code     int
+	Message  string
+	UserID   string
+	UserName string
+	Email    string
+	Phone    string
 }
 
 func (c *LoginController) Login() {
-	sess, _ := globalSessions.SessionStart(c.Ctx.ResponseWriter.ResponseWriter, c.Ctx.Request)
-	defer sess.SessionRelease(c.Ctx.ResponseWriter.ResponseWriter)
-
 	if c.Ctx.Request.Method == "GET" {
 		c.TplName = "sensor/login.html"
 	} else {
 		var loginResponse = new(LoginReturn)
 		user := c.GetString("username")
 		password := c.GetString("password")
-		token := sess.Get(user)
 		if passtoken := c.Ctx.GetCookie("passtoken"); passtoken != "" {
-			if token.(string) == passtoken {
+			uid, ok, _ := models.GetPassToken(passtoken)
+			if ok {
+				u, err := models.FindUserByUserID(uid)
+				if err != nil {
+					if err != gorm.ErrRecordNotFound {
+						loginResponse.Code = 10001
+						loginResponse.Message = "系统错误"
+					} else {
+						loginResponse.Code = 10002
+						loginResponse.Message = "用户不存在"
+					}
+				}
 				loginResponse.Code = 10000
 				loginResponse.Message = "登陆成功"
+				loginResponse.UserName = u.UserName
+				loginResponse.UserID = uid
 				c.Data["json"] = loginResponse
 				c.ServeJSON()
 			}
@@ -52,7 +65,8 @@ func (c *LoginController) Login() {
 		}
 		loginResponse.Code = 10000
 		loginResponse.Message = "登陆成功"
-		sess.Set("username", c.Ctx.Request.Form["username"])
+		loginResponse.UserName = u.UserName
+		loginResponse.UserID = u.UserID
 		c.Data["json"] = loginResponse
 		c.ServeJSON()
 	}
