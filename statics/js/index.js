@@ -1,3 +1,11 @@
+var initBrandList = function(){
+	var brand_list = [
+		'brand_balluff.gif',
+		'brand_banner.gif',
+		'brand_baumer.gif'
+	];
+	Swin.genBaseUl("brand_list_div",brand_list,2);
+};
 var showNavContent = function(category){
 	var nav_content_list = {
 		"sensor":[
@@ -150,4 +158,5 @@ var initNavMenu = function(){
 };
 $(function(){
 	initNavMenu();
+	initBrandList();
 });
