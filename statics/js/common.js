@@ -1,5 +1,5 @@
 Swin = {};
-Swin.imgPath = "/images/"
+Swin.imgPath = "/statics/images/"
 Swin.genBaseUl = function(parent_id,content_list,content_type){
 	var ul = $("<ul></ul>");
 	for(var i=0; i< content_list.length; i++){

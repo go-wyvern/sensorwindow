@@ -1,0 +1,28 @@
+
+#brand_list_div{
+    border:1px solid #ddd;
+    margin-top: 10px;
+    height: 180px;
+    overflow: hidden;
+}
+#brand_list_div ul{
+    padding-left: 15px;
+    padding-top: 16px;
+}
+#brand_list_div ul li{
+    display: inline-block;
+    float: left;
+    margin-right: 10px;
+    margin-bottom: 16px;
+}
+#brand_list_div ul li img{
+    width: 130px;
+    height: 65px;
+}
+#more_brand_link{
+    display: block;
+    /* float: right; */
+    position: absolute;
+    right: 0px;
+    top: 35px;
+}

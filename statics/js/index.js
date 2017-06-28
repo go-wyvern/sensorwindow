@@ -1,8 +1,51 @@
 var initBrandList = function(){
 	var brand_list = [
-		'brand_balluff.gif',
-		'brand_banner.gif',
-		'brand_baumer.gif'
+		Swin.imgPath+'brand_balluff.gif',
+		Swin.imgPath+'brand_banner.gif',
+		Swin.imgPath+'brand_baumer.gif',
+		Swin.imgPath+"barnd_bernstein.gif",
+		Swin.imgPath+"brand_auely.png",
+		Swin.imgPath+"brand_autonics.gif",
+		Swin.imgPath+"brand_azbil.gif",
+		Swin.imgPath+"brand_bedook.gif",
+		Swin.imgPath+"brand_beisensor.png",
+		Swin.imgPath+"brand_biduk.jpg",
+		Swin.imgPath+"brand_datalogic.gif",
+		Swin.imgPath+"brand_disoric.png",
+		Swin.imgPath+"brand_ege.jpg",
+		Swin.imgPath+"brand_elco.png",
+		Swin.imgPath+"brand_festo.jpg",
+		Swin.imgPath+"brand_fotek.jpg",
+		Swin.imgPath+"brand_gsee.png",
+		Swin.imgPath+"brand_heidenhain.jpg",
+		Swin.imgPath+"brand_hengstler.gif",
+		Swin.imgPath+"brand_hg.jpg",
+		Swin.imgPath+"brand_honeywell.jpg",
+		Swin.imgPath+"brand_hydac.gif",
+		Swin.imgPath+"brand_ifm.gif",
+		Swin.imgPath+"brand_ipf.jpg",
+		Swin.imgPath+"brand_keyence.png",
+		Swin.imgPath+"brand_kubler.gif",
+		Swin.imgPath+"brand_lanbao.gif",
+		Swin.imgPath+"brand_leuze.gif",
+		Swin.imgPath+"brand_lion.gif",
+		Swin.imgPath+"brand_micro.gif",
+		Swin.imgPath+"brand_microepsilon.jpg",
+		Swin.imgPath+"brand_mtl.png",
+		Swin.imgPath+"brand_mydao.gif",
+		Swin.imgPath+"brand_optex.gif",
+		Swin.imgPath+"brand_other.jpg",
+		Swin.imgPath+"brand_pilz.jpg",
+		Swin.imgPath+"brand_reer.png",
+		Swin.imgPath+"brand_schneider.gif",
+		Swin.imgPath+"brand_sensopart.gif",
+		Swin.imgPath+"brand_sunx.gif",
+		Swin.imgPath+"brand_takex.gif",
+		Swin.imgPath+"brand_turck.gif",
+		Swin.imgPath+"brand_vaisala.gif",
+		Swin.imgPath+"brand_wachendorff.png",
+		Swin.imgPath+"brand_wenglor.gif",
+		Swin.imgPath+"brand_wieland.png"
 	];
 	Swin.genBaseUl("brand_list_div",brand_list,2);
 };
@@ -159,4 +202,16 @@ var initNavMenu = function(){
 $(function(){
 	initNavMenu();
 	initBrandList();
+	var flag = 0;
+	$("#more_brand_link").on("click",function(){
+		if(flag==0){
+			$("#brand_list_div").css("height","480px");
+			flag = 1;
+		}else{
+			$("#brand_list_div").css("height","180px");
+			flag = 0;
+		}
+
+		return false;
+	})
 });
