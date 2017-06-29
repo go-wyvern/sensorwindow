@@ -199,9 +199,86 @@ var initNavMenu = function(){
 	}
 	$("#nav_menu").append(nav_ul);
 };
+var initHotProductList = function () {
+	var params = {};
+	params["img_list"] = [
+        Swin.imgPathHot +"hot_01.jpg",
+        Swin.imgPathHot +"hot_02.gif",
+        Swin.imgPathHot +"hot_03.jpg",
+        Swin.imgPathHot +"hot_04.png",
+        Swin.imgPathHot +"hot_05.png",
+        Swin.imgPathHot +"hot_06.png"
+	];
+	params["caption_list"] = {
+        "product_code":[
+            "IFRM 12P1701/S14L",
+            "EE-SX672",
+            "BES M12MI-PSC40B-S04G",
+            "ATM60-P4H13X13",
+            "EX-14A",
+            "QS18VN6D"
+        ],
+        "product_name":[
+            "Baumer 堡盟",
+            "Omron 欧姆龙",
+            "Balluff 巴鲁夫",
+            "Sick 西克",
+            "Panasonic 松下",
+            "Banner 邦纳"
+
+        ],
+        "product_category":[
+            "电感式接近开关",
+            "槽型光电传感器",
+            "电感式接近开关",
+            "绝对值编码器",
+            "漫反射式光电传感器",
+            "漫反射式光电传感器"
+        ]
+	};
+    Swin.genBaseThumbnail("hot_product_div",params,"hot");
+};
+//初始化现货速购模块
+var initPromptList = function () {
+	var params = {};
+	params["img_list"]=[
+        Swin.imgPathPrompt +"prompt_01.jpg",
+        Swin.imgPathPrompt +"prompt_02.jpg",
+        Swin.imgPathPrompt +"prompt_03.png",
+        Swin.imgPathPrompt +"prompt_04.png",
+        Swin.imgPathPrompt +"prompt_05.jpg"
+	];
+	params["caption_list"]={
+        "product_code":[
+            "IGYX 12N17B3/L",
+            "BEN5M-MFR",
+            "SP-04N",
+            "PYF08A-E",
+            "IME08-02BPSZT0S"
+        ],
+        "product_name":[
+            "Baumer 堡盟",
+            "Autonics 奥托尼克斯",
+            "FOTEK 阳明",
+            "Omron 欧姆龙",
+            "Sick 西克"
+        ],
+        "product_category":[
+            "电感式接近开关",
+            "镜反射式光电传感器",
+            "电感式接近开关",
+            "继电器",
+            "电感式接近开关"
+        ]
+	};
+    Swin.genBaseThumbnail("prompt_product_div",params,"prompt");
+};
+//
 $(function(){
 	initNavMenu();
 	initBrandList();
+	initPromptList();
+	initHotProductList();
 	var flag = 0;
 	$("#more_brand_link").on("click",function(){
 		if(flag==0){
@@ -211,7 +288,6 @@ $(function(){
 			$("#brand_list_div").css("height","180px");
 			flag = 0;
 		}
-
 		return false;
 	})
 });

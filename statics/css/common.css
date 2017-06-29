@@ -1,6 +1,16 @@
+body, textarea, input, button, select, keygen, legend {
+	font: 12px/1.14 微软雅黑;
+	color: #333;
+}
 *,#index_right_banner,.row{
 	margin:0px;
 	padding:0px;
+}
+ul li{
+	list-style: none;
+}
+a:hover, a:focus{
+	text-decoration: none;
 }
 .header-info{
 	width: 100%;
@@ -69,7 +79,6 @@
 	float: right;
 }
 .main{
-	height: 314px;
 	position: relative;
 }
 #nav_menu{
@@ -162,3 +171,4 @@
 	height: 38px;
 	background: url("/statics/images/pwd-icons-new.png") no-repeat;
 }
+

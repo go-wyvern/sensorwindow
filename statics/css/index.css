@@ -1,7 +1,8 @@
-
-#brand_list_div{
+#brand_list_div,#hot_product_div, #prompt_product_div{
     border:1px solid #ddd;
     margin-top: 10px;
+}
+#brand_list_div{
     height: 180px;
     overflow: hidden;
 }
@@ -25,4 +26,72 @@
     position: absolute;
     right: 0px;
     top: 35px;
+}
+.footer{
+    height: 207px;
+    margin-top: 36px;
+}
+.footer .service_intro{
+    height: 127px;
+    border-top: 1px solid #ddd;
+    border-bottom: 1px solid #ddd;
+}
+#prompt_product_div{
+    height: 380px;
+}
+#hot_product_div{
+    height: 330px;
+}
+#hot_product_div .hot, #prompt_product_div .prompt{
+    display: inline-block;
+}
+#hot_product_div .hot{
+    width: 16%;
+    margin-right: 7px;
+}
+#prompt_product_div .prompt{
+    width: 19%;
+    margin-right: 10px;
+}
+.thumbnail{
+    position: relative;
+    border:none;
+    -webkit-box-shadow: none;
+    box-shadow: none;
+    margin-top: 20px;
+}
+prompt_product_div  .thumbnail img{
+    width: 166px;
+}
+.thumbnail img{
+     width: 146px;
+     height: 146px;
+     vertical-align: middle;
+ }
+
+.thumbnail .caption{
+    margin-top: 20px;
+    position: absolute;
+    top: 150px;
+}
+.thumbnail .caption p{
+    text-align: center;
+}
+.thumbnail .caption p a{
+    color: #333;
+    display: inline-block;
+    width: 200px;
+}
+.thumbnail .caption p a:hover,.thumbnail .caption p a:focus {
+    color:#c81623;
+}
+
+.thumbnail .caption p .product_code{
+    font-size: 16px;
+    line-height: 24px;
+}
+.thumbnail .caption p .product_name, .thumbnail .caption p .product_category{
+    font-size: 12px;
+    line-height: 20px;
+    color: #616161;
 }
