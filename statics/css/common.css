@@ -171,4 +171,14 @@ a:hover, a:focus{
 	height: 38px;
 	background: url("/statics/images/pwd-icons-new.png") no-repeat;
 }
+.headline{
+	margin-top: 12px;
+	padding-left: 0px;
+}
+.headline h3{
+	font-size: 18px;
+	color: #414141;
+	font-weight: normal;
+	margin-bottom: 12px; 
+}
 

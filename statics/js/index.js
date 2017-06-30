@@ -273,12 +273,92 @@ var initPromptList = function () {
 	};
     Swin.genBaseThumbnail("prompt_product_div",params,"prompt");
 };
+//生成传感器grid
+var initSensorProductGrid = function () {
+	var params = {};
+    params["brand"]={
+        "width":"col-sm-2",
+		"show_list":[
+				{
+					"image": Swin.imgPathSensor +"brand_balluff.gif",
+					"code":"",
+					"category":""
+				}, {
+					"image": Swin.imgPathSensor +"brand_baumer.gif",
+					"code":"",
+					"category":""
+				}, {
+					"image":Swin.imgPathSensor +"brand_omron.gif",
+					"code":"",
+					"category":""
+				},{
+        			"image":Swin.imgPathSensor +"brand_sick.gif",
+					"code":"",
+					"category":""
+				},{
+        			"image":Swin.imgPathSensor +"brand_pepperl_fuchs.gif",
+					"code":"",
+					"category":""
+    			}
+		]
+    };
+    params["banner"] = {
+        "width":"col-sm-4",
+        "show_list":[
+            {
+                "image":Swin.imgPathSensor +"banner_sensor.jpg",
+                "code":"",
+                "category":""
+            }
+        ]
+    };
+    params["product_detail_lg"] = {
+        "width":"col-sm-2",
+        "show_list":[
+            {
+                "image": Swin.imgPathSensor +"product_detail_01.jpg",
+                "code": "IFRM 08P17A1/S35L",
+                "category": "Baumer 堡盟"
+            }
+		]
+	};
+    params["product_detail_1"]={
+        "width":"col-sm-2",
+        "show_list":[
+			{
+                "image": Swin.imgPathSensor +"product_detail_02.jpg",
+                "code":"IFRM 12P1701/S14L",
+                "category":"Baumer 堡盟"
+            }, {
+                "image":Swin.imgPathSensor +"product_detail_03.jpg",
+                "code":"FHDK 10P5101/S35A",
+                "category":"Baumer 堡盟"
+            }
+        ]
+    };
+    params["product_detail_2"]={
+        "width":"col-sm-2",
+        "show_list":[
+			{
+                "image":Swin.imgPathSensor +"product_detail_04.jpg",
+                "code":"FHDK 10P5101/S35A",
+                "category":"Baumer 堡盟"
+            },{
+                "image":Swin.imgPathSensor +"product_detail_05.jpg",
+                "code":"FHDK 10P5101/S35A",
+                "category":"Baumer 堡盟"
+            }
+        ]
+    };
+    Swin.genBaseGrid("sensor_product_div",params);
+};
 //
 $(function(){
 	initNavMenu();
 	initBrandList();
 	initPromptList();
 	initHotProductList();
+	initSensorProductGrid();
 	var flag = 0;
 	$("#more_brand_link").on("click",function(){
 		if(flag==0){

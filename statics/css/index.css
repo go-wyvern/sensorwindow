@@ -1,6 +1,5 @@
-#brand_list_div,#hot_product_div, #prompt_product_div{
+#brand_list_div,#hot_product_div, #prompt_product_div,#sensor_product_div{
     border:1px solid #ddd;
-    margin-top: 10px;
 }
 #brand_list_div{
     height: 180px;
@@ -63,7 +62,7 @@
 prompt_product_div  .thumbnail img{
     width: 166px;
 }
-.thumbnail img{
+.thumbnail a img{
      width: 146px;
      height: 146px;
      vertical-align: middle;
@@ -80,7 +79,7 @@ prompt_product_div  .thumbnail img{
 .thumbnail .caption p a{
     color: #333;
     display: inline-block;
-    width: 200px;
+    width: 150px;
 }
 .thumbnail .caption p a:hover,.thumbnail .caption p a:focus {
     color:#c81623;
@@ -94,4 +93,79 @@ prompt_product_div  .thumbnail img{
     font-size: 12px;
     line-height: 20px;
     color: #616161;
+}
+#sensor_product_div{
+    border-right:0px;
+    border-top: 2px solid #c81623;
+}
+#sensor_product_div{
+    height: 365px;
+}
+#sensor_product_div a{
+    display: block;
+    text-align: center;
+}
+#sensor_product_div .code{
+    font-size: 14px;
+    line-height: 20px;
+    color: #616161;
+    text-align: center;
+    overflow: hidden;
+    text-overflow: ellipsis;
+    white-space: nowrap;
+}
+#sensor_product_div .category{
+    font-size: 13px;
+    line-height: 20px;
+    color: #f07c7c;
+    text-align: center;
+}
+#sensor_product_div .product_detail_lg img{
+    width: 150px;
+    max-height: 190px;
+}
+#sensor_product_div>div {
+    padding-left: 0px;
+    padding-right: 0px;
+    height: 100%;
+}
+#sensor_product_div>div>div{
+    position: relative;
+    border: solid #f0f0f0;
+    border-width: 0px 1px 1px 0px ;
+}
+#sensor_product_div .product_detail_lg{
+    height:100%;
+    border-width: 0px 1px 0px 0px;
+}
+#sensor_product_div .product_detail_lg a.image{
+    position: absolute;
+    bottom: 20%;
+    left: 20%;
+}
+#sensor_product_div .product_detail_lg a.code{
+    position: absolute;
+    top: 20%;
+    left: 20%;
+}
+#sensor_product_div .product_detail_lg a.category{
+    position: absolute;
+    top: 25%;
+    left: 30%;
+}
+.brand {
+    padding: 4px 0 3px;
+}
+.product_detail_1,.product_detail_2{
+    height: 50%;
+    padding-top: 10px;
+}
+.product_detail_1 a.image,.product_detail_2 a.image{
+    position: absolute;
+    bottom: 0px;
+    left: 20%;
+}
+.product_detail_1 img,.product_detail_2 img{
+    width: 113px;
+    max-height: 113px;
 }

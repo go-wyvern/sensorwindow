@@ -2,6 +2,7 @@ Swin = {};
 Swin.imgPath = "/statics/images/"
 Swin.imgPathHot = Swin.imgPath + "hot/"
 Swin.imgPathPrompt = Swin.imgPath + "prompt/"
+Swin.imgPathSensor = Swin.imgPath + "sensor/"
 Swin.genBaseUl = function(parent_id,content_list,content_type){
 	var ul = $("<ul></ul>");
 	for(var i=0; i< content_list.length; i++){
@@ -47,3 +48,26 @@ Swin.genBaseThumbnail = function (parent_id,params,type) {
             $("#"+parent_id).append(each_div);
         }
 };
+
+Swin.genBaseGrid = function (parent_id,params) {
+    //生成brand列表
+    for(each_col_key in params){
+        var  each_col_params = params[each_col_key];
+        //渲染column
+        var  each_col = $("<div class='"+each_col_params.width+"'></div>");
+        var show_list = each_col_params.show_list;
+        for(var i = 0; i< show_list.length; i++){
+            var each_show_div = $("<div class='"+each_col_key+"'></div>")
+            var each_show_param = show_list[i];
+            for(key in each_show_param){
+                if (key == "image"){
+                    each_show_div.append($("<a href='#' class='"+key+"'><img src='"+each_show_param[key]+"'></a>"));
+                }else{
+                    each_show_div.append($("<a href='#' class='"+key+"'>"+each_show_param[key]+"</a>"));
+                }
+            }
+            each_col.append(each_show_div);
+        }
+        $("#"+parent_id).append(each_col);
+    }
+}
