@@ -13,7 +13,10 @@ Swin.genBaseUl = function(parent_id,content_list,content_type){
 		}else if(content_type == 2){
 			//图片链接
 			var each_li = $('<li><a href="#"><img src="'+each_content+'"></a></li>');
-		}
+		}else if (content_type == 3){
+            //图标文字
+            var each_li = $('<li><span class="'+each_content.icon+'"></span><a href="#">'+each_content.title+'</a></li>');
+        }
 		ul.append(each_li);
 	}
 	$("#"+parent_id).append(ul);

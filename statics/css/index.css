@@ -34,6 +34,8 @@
     height: 127px;
     border-top: 1px solid #ddd;
     border-bottom: 1px solid #ddd;
+    padding: 23px 0px;
+    padding-left: 50px;
 }
 #prompt_product_div{
     height: 380px;
@@ -59,7 +61,7 @@
     box-shadow: none;
     margin-top: 20px;
 }
-prompt_product_div  .thumbnail img{
+.prompt_product_div  .thumbnail img{
     width: 166px;
 }
 .thumbnail a img{
@@ -168,4 +170,61 @@ prompt_product_div  .thumbnail img{
 .product_detail_1 img,.product_detail_2 img{
     width: 113px;
     max-height: 113px;
+}
+#service_list{
+    border-left: 1px solid #EFEFEF;
+    border-right: 1px solid #EFEFEF;
+    margin: 0px 18px;
+}
+.footer>div>div{
+    height: 81px;
+}
+.footer ul{
+    float: right;
+    margin: 4px 0px;
+}
+.service_intro ul li{
+    height: 26px;
+    line-height: 26px;
+}
+#service_headline ul li span{
+    opacity: 0.4;
+    margin-right: 5px;
+}
+#service_headline ul li a{
+    color: #000;
+}
+#service_list ul li{
+    display: inline-block;
+    float: left;
+    width: 20%;
+}
+#service_list ul li a{
+    display: block;
+    line-height: 26px;
+    text-align: center;
+    color: #9A9A9A;
+}
+#wechat_link a img{
+    width: 150px;
+    height: 80px;
+}
+.footer .copyright{
+    margin-top: 30px;
+}
+.footer .copyright .copyright_p{
+    font-size: 12px;
+    color: #999;
+}
+.footer .copyright p{
+    font-size: 14px;
+    color: #595959;
+    text-align: center;
+    padding-bottom: 12px;
+}
+.copyright .icon_police{
+    display: inline-block;
+    width: 20px;
+    height: 20px;
+    background:url("../images/icon-police.png") no-repeat;
 }

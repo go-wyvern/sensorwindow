@@ -2,6 +2,9 @@ body, textarea, input, button, select, keygen, legend {
 	font: 12px/1.14 微软雅黑;
 	color: #333;
 }
+.clearfix{
+	clear: both;
+}
 *,#index_right_banner,.row{
 	margin:0px;
 	padding:0px;
