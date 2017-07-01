@@ -1,53 +1,90 @@
 var initBrandList = function(){
-	var brand_list = [
-		Swin.imgPath+'brand_balluff.gif',
-		Swin.imgPath+'brand_banner.gif',
-		Swin.imgPath+'brand_baumer.gif',
-		Swin.imgPath+"barnd_bernstein.gif",
-		Swin.imgPath+"brand_auely.png",
-		Swin.imgPath+"brand_autonics.gif",
-		Swin.imgPath+"brand_azbil.gif",
-		Swin.imgPath+"brand_bedook.gif",
-		Swin.imgPath+"brand_beisensor.png",
-		Swin.imgPath+"brand_biduk.jpg",
-		Swin.imgPath+"brand_datalogic.gif",
-		Swin.imgPath+"brand_disoric.png",
-		Swin.imgPath+"brand_ege.jpg",
-		Swin.imgPath+"brand_elco.png",
-		Swin.imgPath+"brand_festo.jpg",
-		Swin.imgPath+"brand_fotek.jpg",
-		Swin.imgPath+"brand_gsee.png",
-		Swin.imgPath+"brand_heidenhain.jpg",
-		Swin.imgPath+"brand_hengstler.gif",
-		Swin.imgPath+"brand_hg.jpg",
-		Swin.imgPath+"brand_honeywell.jpg",
-		Swin.imgPath+"brand_hydac.gif",
-		Swin.imgPath+"brand_ifm.gif",
-		Swin.imgPath+"brand_ipf.jpg",
-		Swin.imgPath+"brand_keyence.png",
-		Swin.imgPath+"brand_kubler.gif",
-		Swin.imgPath+"brand_lanbao.gif",
-		Swin.imgPath+"brand_leuze.gif",
-		Swin.imgPath+"brand_lion.gif",
-		Swin.imgPath+"brand_micro.gif",
-		Swin.imgPath+"brand_microepsilon.jpg",
-		Swin.imgPath+"brand_mtl.png",
-		Swin.imgPath+"brand_mydao.gif",
-		Swin.imgPath+"brand_optex.gif",
-		Swin.imgPath+"brand_other.jpg",
-		Swin.imgPath+"brand_pilz.jpg",
-		Swin.imgPath+"brand_reer.png",
-		Swin.imgPath+"brand_schneider.gif",
-		Swin.imgPath+"brand_sensopart.gif",
-		Swin.imgPath+"brand_sunx.gif",
-		Swin.imgPath+"brand_takex.gif",
-		Swin.imgPath+"brand_turck.gif",
-		Swin.imgPath+"brand_vaisala.gif",
-		Swin.imgPath+"brand_wachendorff.png",
-		Swin.imgPath+"brand_wenglor.gif",
-		Swin.imgPath+"brand_wieland.png"
-	];
-	Swin.genBaseUl("brand_list_div",brand_list,2);
+	var submit_params = "";
+	submit_params += "page=1";
+	submit_params += "&is_all=true";
+	var brand_list = [];
+	$.get("/brands?"+submit_params,function(res){
+		var data = res.data;
+		data.forEach(function(each_data){
+				console.log(each_data["Image"])
+				brand_list.push(each_data["Image"]);
+			});
+		Swin.genBaseUl("brand_list_div",brand_list,2);
+	});
+};
+var initSensorNewMediaGrid = function(){
+	var params = {};
+	params["evalution"]={
+		"width":"col-sm-3",
+		"show_list":[
+			{
+				"image":Swin.imgPath+"evalution_01.jpg",
+				"title":"阳明FOTEK固态继电器真假辨别小Tips 【视频版】"
+			}, {
+				"image":Swin.imgPath+"evalution_02.png",
+				"title":"真假对比|欧姆龙MY系列继电器正品VS仿品【买道测评】"
+			},{
+				"image":Swin.imgPath+"evalution_03.jpg",
+				"title":"现场应用||实测电机对接近开关的干扰【买道测评】"
+			}
+		]
+	};
+	params["circle"]={
+		"width":"col-sm-3",
+		"show_list":[
+			{
+				"title":"色标传感器的选型 | 光源"
+			},{
+				"title":"色标传感器的选型 | 光源"
+			},{
+				"title":"色标传感器的选型 | 光源"
+			},
+			{
+				"title":"色标传感器的选型 | 光源"
+			},
+			{
+				"title":"色标传感器的选型 | 光源"
+			},
+			{
+				"title":"色标传感器的选型 | 光源"
+			},
+			{
+				"title":"色标传感器的选型 | 光源"
+			},
+			{
+				"title":"色标传感器的选型 | 光源"
+			},
+			{
+				"title":"色标传感器的选型 | 光源"
+			},
+			{
+				"title":"色标传感器的选型 | 光源"
+			},
+			{
+				"title":"色标传感器的选型 | 光源"
+			},
+			{
+				"title":"色标传感器的选型 | 光源"
+			},
+
+		]
+	};
+	params["knowledge"] = {
+		"width":"col-sm-6",
+		"show_list":[
+			{
+				"image":Swin.imgPath+"evalution_01.jpg",
+				"title":"阳明FOTEK固态继电器真假辨别小Tips 【视频版】"
+			}, {
+				"image":Swin.imgPath+"evalution_02.jpg",
+				"title":"真假对比|欧姆龙MY系列继电器正品VS仿品【买道测评】"
+			},{
+				"image":Swin.imgPath+"evalution_03.jpg",
+				"title":"现场应用||实测电机对接近开关的干扰【买道测评】"
+			}
+		]
+	};
+	Swin.genBaseGrid("sensor_new_media",params);
 };
 var showNavContent = function(category){
 	var nav_content_list = {
@@ -160,7 +197,6 @@ var showNavContent = function(category){
 	//生成nav_content div
 	$("#nav_content").html("");
 	var nav_content = nav_content_list[category];
-	console.log(nav_content);
 	var nav_content_ul = $("<ul id='nav_content_ul'></ul>");
 	for (var i=0; i<nav_content.length; i++){
 		var nav_content_item = nav_content[i];
@@ -191,7 +227,6 @@ var initNavMenu = function(){
 	var nav_ul = $("<ul class='nav_menu_ul'></ul>");
 	for(category in nav_category_list){
 		var category_name = nav_category_list[category];
-		console.log(category,category_name);
 		//生成每个category list
 		var category_name_li = $("<li><a href='#' onmouseover='showNavContent("+'"'+category+'"'+")' onmouseout='hideNavContent()'>"+category_name+"</a></li>");
 		//category list添加到category_ul中
@@ -379,6 +414,7 @@ var initFooterMenu = function(){
 $(function(){
 	initNavMenu();
 	initBrandList();
+	initSensorNewMediaGrid();
 	initPromptList();
 	initHotProductList();
 	initSensorProductGrid();
