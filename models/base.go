@@ -1,6 +1,7 @@
 package models
 
 import (
+	"math"
 	"time"
 
 	"github.com/astaxie/beego"
@@ -75,4 +76,43 @@ func Rdo(commandName string, args ...interface{}) (reply interface{}, err error)
 	defer c.Close()
 
 	return c.Do(commandName, args...)
+}
+
+type Pagination struct {
+	PageSize   int `json:"page_size"`
+	PageNumber int `json:"page_number"`
+	TotalPage  int `json:"total_page"`
+	Count      int `json:"count"`
+}
+
+type BaseResponse struct {
+	Code       int         `json:"code"`    // 业务处理状态
+	Message    string      `json:"message"` // 业务处理消息
+	Pagination *Pagination `json:"pagination,omitempty"`
+	Data       interface{} `json:"data"`            // 业务处理返回结果
+	Error      string      `json:"error,omitempty"` // 错误信息
+}
+
+func NewPagination(page, page_size int) *Pagination {
+	p := new(Pagination)
+	p.PageSize = page_size
+	p.PageNumber = page
+	return p
+}
+
+func (p *Pagination) Paginate(db *gorm.DB) (*gorm.DB, error) {
+	err := db.Count(&p.Count).Error
+	if err != nil {
+		return nil, err
+	}
+	offset := (p.PageNumber - 1) * p.PageSize
+	p.TotalPage = int(math.Ceil(float64(p.Count) / float64(p.PageSize))) //page总数
+	if p.PageNumber > p.TotalPage {
+		p.PageNumber = p.TotalPage
+	}
+	if p.PageNumber <= 0 {
+		p.PageNumber = 1
+	}
+	TempDb := db.Limit(p.PageSize).Offset(offset)
+	return TempDb, nil
 }
