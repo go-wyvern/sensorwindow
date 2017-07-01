@@ -1,16 +1,16 @@
 var initBrandList = function(){
-	var submit_params = "";
-	submit_params += "page=1";
-	submit_params += "&is_all=true";
+	// var submit_params = "";
+	// submit_params += "page=1";
+	// submit_params += "&is_all=true";
 	var brand_list = [];
-	$.get("/brands?"+submit_params,function(res){
-		var data = res.data;
+	// $.get("/brands?"+submit_params,function(res){
+		var data = brands;
 		data.forEach(function(each_data){
-				console.log(each_data["Image"])
-				brand_list.push(each_data["Image"]);
+				console.log(each_data["image"])
+				brand_list.push(each_data["image"]);
 			});
+	// });
 		Swin.genBaseUl("brand_list_div",brand_list,2);
-	});
 };
 var initSensorNewMediaGrid = function(){
 	var params = {};
@@ -76,7 +76,7 @@ var initSensorNewMediaGrid = function(){
 				"image":Swin.imgPath+"evalution_01.jpg",
 				"title":"阳明FOTEK固态继电器真假辨别小Tips 【视频版】"
 			}, {
-				"image":Swin.imgPath+"evalution_02.jpg",
+				"image":Swin.imgPath+"evalution_02.png",
 				"title":"真假对比|欧姆龙MY系列继电器正品VS仿品【买道测评】"
 			},{
 				"image":Swin.imgPath+"evalution_03.jpg",

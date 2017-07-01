@@ -2,6 +2,7 @@ package controllers
 
 import (
 	"github.com/astaxie/beego"
+	"github.com/go-wyvern/sensorwindow/models"
 )
 
 type IndexController struct {
@@ -9,7 +10,7 @@ type IndexController struct {
 }
 
 func (c *IndexController) Index() {
-	c.Data["Website"] = "beego.me"
-	c.Data["Email"] = "astaxie@gmail.com"
+	brands, _ := models.GetBrands(true, 1, 10, []string{"brand_name", "image"})
+	c.Data["brands"] = brands
 	c.TplName = "index.html"
 }

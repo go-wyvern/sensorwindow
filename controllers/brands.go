@@ -2,6 +2,8 @@ package controllers
 
 //"github.com/jinzhu/gorm"
 import (
+	"strings"
+
 	"github.com/go-wyvern/sensorwindow/models"
 )
 
@@ -14,7 +16,8 @@ func (c *BrandsController) GetList() {
 	is_all, _ := c.GetBool("is_all", false)
 	page, _ := c.GetInt("page", 1)
 	per_page, _ := c.GetInt("per_page", 10)
-	brands, err := models.GetBrands(is_all, page, per_page)
+	fields := c.GetString("fields")
+	brands, err := models.GetBrands(is_all, page, per_page, strings.Split(fields, ","))
 	if err != nil {
 		baseResponse.Code = 1001
 		baseResponse.Error = err.Error()
