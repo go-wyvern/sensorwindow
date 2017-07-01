@@ -12,13 +12,18 @@ type Brand struct {
 	Image  string `gorm:"column:image"`
 }
 
-func GetBrands(is_all bool) ([]Brand, error) {
+func GetBrands(is_all bool, page, per_page int) ([]Brand, error) {
 	var brands []Brand
 	var err error
 	if is_all {
 		err = Db.Model(Brand{}).Find(&brands).Error
 	} else {
-		err = Db.Model(Brand{}).Limit(16).Find(&brands).Error
+		p := NewPagination(page, per_page)
+		db, err := p.Paginate(Db.Model(Brand{}))
+		if err != nil {
+			return brands, err
+		}
+		err = db.Model(Brand{}).Find(&brands).Error
 	}
 	return brands, err
 }
