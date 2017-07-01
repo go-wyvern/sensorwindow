@@ -21,7 +21,7 @@ var initSensorNewMediaGrid = function(){
 				"image":Swin.imgPath+"evalution_01.jpg",
 				"title":"阳明FOTEK固态继电器真假辨别小Tips 【视频版】"
 			}, {
-				"image":Swin.imgPath+"evalution_02.png",
+				"image":Swin.imgPath+"evalution_02.png ",
 				"title":"真假对比|欧姆龙MY系列继电器正品VS仿品【买道测评】"
 			},{
 				"image":Swin.imgPath+"evalution_03.jpg",
