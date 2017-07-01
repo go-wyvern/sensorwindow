@@ -210,18 +210,10 @@ var hideNavContent = function(){
 };
 var initNavMenu = function(){
 	$("#nav_content").hide();
-	var nav_category_list =  {
-		"sensor":"传感器",
-		"sportControl":"运动控制",
-		"processControllInstrument":"过程控制仪表",
-		"thermalCamera ":"视觉相机",
-		"switch":"开关",
-		"safetyProd":"安全产品",
-		"RFIDSys":"RFID系统",
-		"relay":"继电器",
-		"FBM":"现场总线组件",
-		"others":"其他"
-	};
+	var nav_category_list = {};
+	root_category.forEach(function(each_root){
+		nav_category_list[each_root["english_name"]] = each_root["name"];
+	});
 	//新建一个ul
 	var nav_ul = $("<ul class='nav_menu_ul'></ul>");
 	for(category in nav_category_list){
