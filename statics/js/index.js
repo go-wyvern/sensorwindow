@@ -6,7 +6,6 @@ var initBrandList = function(){
 	// $.get("/brands?"+submit_params,function(res){
 		var data = brands;
 		data.forEach(function(each_data){
-				console.log(each_data["image"])
 				brand_list.push(each_data["image"]);
 			});
 	// });
