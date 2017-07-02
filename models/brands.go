@@ -1,5 +1,7 @@
 package models
 
+import "github.com/jinzhu/gorm"
+
 type Brand struct {
 	ID        uint       `gorm:"primary_key" json:"id,omitempty"`
 	CreatedAt *StampTime `json:"created_at,omitempty"`
@@ -14,21 +16,22 @@ type Brand struct {
 func GetBrands(is_all bool, page, per_page int, fields []string) ([]Brand, error) {
 	var brands []Brand
 	var err error
+	var tempDb *gorm.DB = Db
 	if is_all {
 		if len(fields) != 0 {
-			Db = Db.Select(fields)
+			tempDb = tempDb.Select(fields)
 		}
-		err = Db.Model(Brand{}).Find(&brands).Error
+		err = tempDb.Model(Brand{}).Find(&brands).Error
 	} else {
 		p := NewPagination(page, per_page)
-		db, err := p.Paginate(Db.Model(Brand{}))
+		tempDb, err := p.Paginate(tempDb.Model(Brand{}))
 		if err != nil {
 			return brands, err
 		}
 		if len(fields) != 0 {
-			db = db.Select(fields)
+			tempDb = tempDb.Select(fields)
 		}
-		err = db.Model(Brand{}).Find(&brands).Error
+		err = tempDb.Model(Brand{}).Find(&brands).Error
 	}
 	return brands, err
 }

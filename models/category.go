@@ -3,6 +3,12 @@ Category: 分类
 */
 package models
 
+import (
+	"fmt"
+
+	"github.com/jinzhu/gorm"
+)
+
 type Category struct {
 	ID             uint       `gorm:"primary_key" json:"id,omitempty"`
 	CreatedAt      *StampTime `json:"created_at,omitempty"`
@@ -14,23 +20,44 @@ type Category struct {
 }
 
 func GetRootCategories(is_all bool, page, per_page int, fields []string) ([]Category, error) {
-	var categorys []Category
+	var categories []Category
 	var err error
+	var tempDb *gorm.DB = Db
 	if is_all {
 		if len(fields) != 0 {
-			Db = Db.Select(fields)
+			tempDb = tempDb.Select(fields)
 		}
-		err = Db.Model(Category{}).Where("parent_category IS NULL").Find(&categorys).Error
+		err = tempDb.Model(Category{}).Where("parent_category IS NULL").Find(&categories).Error
 	} else {
 		p := NewPagination(page, per_page)
-		db, err := p.Paginate(Db.Model(Category{}))
+		tempDb, err := p.Paginate(tempDb.Model(Category{}))
 		if err != nil {
-			return categorys, err
+			return categories, err
 		}
 		if len(fields) != 0 {
-			db = db.Select(fields)
+			tempDb = tempDb.Select(fields)
 		}
-		err = db.Model(Category{}).Where("parent_category IS NULL").Find(&categorys).Error
+		err = tempDb.Model(Category{}).Where("parent_category IS NULL").Find(&categories).Error
 	}
-	return categorys, err
+	return categories, err
+}
+
+func GetCategories() ([]Category, error) {
+	var categories []Category
+	var err error
+	err = Db.Model(Category{}).Where("parent_category IS NOT NULL").Find(&categories).Error
+	return categories, err
+}
+
+func GetCategoriesGroup(root_categories, categories []Category) map[string][]string {
+	var group = make(map[string][]string)
+	var root = make(map[uint]string)
+	for _, r := range root_categories {
+		root[r.ID] = r.EnglishName
+	}
+	fmt.Println(root)
+	for _, c := range categories {
+		group[root[*c.ParentCategory]] = append(group[root[*c.ParentCategory]], c.Name)
+	}
+	return group
 }
