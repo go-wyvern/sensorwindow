@@ -206,7 +206,7 @@ var showNavContent = function(category){
 	$("#nav_content").show();
 };
 var hideNavContent = function(){
-	$("#nav_content").hide();
+	$("#nav_content").hide();	
 };
 var initNavMenu = function(){
 	$("#nav_content").hide();
@@ -224,6 +224,11 @@ var initNavMenu = function(){
 		nav_ul.append(category_name_li);
 	}
 	$("#nav_menu").append(nav_ul);
+	$("#nav_content").hover(function(){
+		$("#nav_content").show()
+	},function(){
+		$("#nav_content").hide();
+	});
 };
 var initHotProductList = function () {
 	var params = {};
