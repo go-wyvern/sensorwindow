@@ -19,6 +19,10 @@
     width: 130px;
     height: 65px;
 }
+
+#nav_content:focus{
+    display: block;
+}
 #more_brand_link{
     display: block;
     /* float: right; */

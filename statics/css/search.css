@@ -1,0 +1,36 @@
+.search{
+    height: 315px;
+    width: 170px;
+    display: inline-block;
+    float: left;
+}
+.search .thumbnail .caption{
+    padding: 0px;
+}
+.search .thumbnail{
+    width: 147px;
+    padding: 0px;
+    margin-bottom: 0px;
+    border: none;
+    -webkit-box-shadow: none;
+    box-shadow: none;
+}
+.search .thumbnail:hover{
+    -webkit-box-shadow: 0 2px 2px rgba(0,0,0,.075);
+    box-shadow: 0 2px 2px rgba(0,0,0,.075);
+    /*border: 1px solid #ddd;*/
+}
+.search .thumbnail a img{
+    width: 145px;
+    height: 145px;
+}
+.search .thumbnail a {
+    display: block;
+    width: 145px;
+    text-align: center;
+    color: #333;
+}
+.product_code{
+    font-weight: bold;
+    line-height: 24px;
+}
