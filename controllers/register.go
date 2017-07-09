@@ -7,6 +7,7 @@ type RegisterController struct {
 }
 
 func (c *RegisterController) Regiter() {
+	c.Data["title"] = "注册"
 	c.Layout = "layout_without_header.html"
 	c.TplName = "sensor/register.html"
 }

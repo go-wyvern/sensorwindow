@@ -3,11 +3,7 @@ Category: 分类
 */
 package models
 
-import (
-	"fmt"
-
-	"github.com/jinzhu/gorm"
-)
+import "github.com/jinzhu/gorm"
 
 type Category struct {
 	ID             uint       `gorm:"primary_key" json:"id,omitempty"`
@@ -55,7 +51,7 @@ func GetCategoriesGroup(root_categories, categories []Category) map[string][]str
 	for _, r := range root_categories {
 		root[r.ID] = r.EnglishName
 	}
-	fmt.Println(root)
+
 	for _, c := range categories {
 		group[root[*c.ParentCategory]] = append(group[root[*c.ParentCategory]], c.Name)
 	}
