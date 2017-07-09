@@ -40,7 +40,7 @@ a:hover, a:focus{
 	width: 95px;
 	height: 40px;
 	border-radius: 0px;
-	background: #B71B2C;
+	background: #0b3a6f;
 	color: #fff;
 }
 
@@ -50,7 +50,7 @@ a:hover, a:focus{
 
 .header_nav{
 	height: 36px;
-	border-bottom: 2px solid #B71B2C;
+	border-bottom: 2px solid #0c3e78;
 }
 .header_nav_container{
 	height: 36px;
@@ -66,7 +66,7 @@ a:hover, a:focus{
 	line-height: 36px;
 }
 .all_item_list{
-	background-color: #b1191a;
+	background-color: #033265;
 }
 .all_item_list .nav_item,.all_item_list .nav_item:hover,.all_item_list .nav_item:focus{
 	color: #fff;
@@ -85,8 +85,8 @@ a:hover, a:focus{
 	position: relative;
 }
 #nav_menu{
-	background-color: #c81623;
-	border: 1px solid #c81623;
+	background-color: #0c5a94;
+	border: 1px solid #0c5a94;
 	height: 314px;
 }
 .nav_content{

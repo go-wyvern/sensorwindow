@@ -15,6 +15,7 @@ func (c *IndexController) Index() {
 	categories, _ := models.GetCategories()
 	leaf_category := models.GetCategoriesGroup(root_category, categories)
 	c.Data["brands"] = brands
+	c.Data["title"] = "sensor window"
 	c.Data["root_category"] = root_category
 	c.Data["leaf_category"] = leaf_category
 	c.Layout = "layout.html"

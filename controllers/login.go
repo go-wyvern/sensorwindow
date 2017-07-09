@@ -23,9 +23,10 @@ type LoginReturn struct {
 
 func (c *LoginController) Login() {
 	if c.Ctx.Request.Method == "GET" {
+		c.Data["title"] = "登陆"
+		c.Layout = "layout.html"
 		c.TplName = "sensor/login.html"
 	} else {
-		fmt.Println("post~~~!!!!!!!!")
 		var loginResponse = new(LoginReturn)
 		user := c.GetString("username")
 		password := c.GetString("password")
