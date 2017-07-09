@@ -3,7 +3,6 @@ package models
 import (
 	"database/sql/driver"
 	"errors"
-	"fmt"
 	"math"
 	"time"
 
@@ -120,27 +119,18 @@ func (p *Pagination) Paginate(db *gorm.DB) (*gorm.DB, error) {
 	return TempDb, nil
 }
 
-// StampTime 时间输出可变类型
 type StampTime struct {
-	/*值为1为格式化为数字 值为0为格式化为StampTime*/
-	JosnType int8
-	Data     int64
+	Data string
 }
 
 // MarshalJSON 序列化数据时根据调用的
 func (t *StampTime) MarshalJSON() ([]byte, error) {
-	if t.JosnType == 0 {
-		return []byte(`"` + time.Unix(t.Data, 0).Format("2006-01-02 15:04:05") + `"`), nil
-	}
-	return []byte(fmt.Sprint(t.Data)), nil
+	return []byte(`"` + t.Data + `"`), nil
 }
 
 // Value 插入 sql 数据时调用
 func (t StampTime) Value() (driver.Value, error) {
-	if t.JosnType == 0 {
-		return driver.Value(time.Unix(t.Data, 0).Format("2006-01-02 15:04:05")), nil
-	}
-	return []byte(fmt.Sprint(t.Data)), nil
+	return driver.Value(t.Data), nil
 }
 
 // Scan 查询数据库时调用
@@ -149,9 +139,6 @@ func (t *StampTime) Scan(value interface{}) error {
 	if !ok {
 		return errors.New("Scan source is not time.Time")
 	}
-	t.Data = timeParsed.Unix()
-	if t.Data < 0 {
-		t.Data = 0
-	}
+	t.Data = timeParsed.Format("2006-01-02 15:04:05")
 	return nil
 }

@@ -17,5 +17,6 @@ func (c *IndexController) Index() {
 	c.Data["brands"] = brands
 	c.Data["root_category"] = root_category
 	c.Data["leaf_category"] = leaf_category
+	c.Layout = "layout.html"
 	c.TplName = "index.html"
 }
