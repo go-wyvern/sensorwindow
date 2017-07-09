@@ -24,7 +24,7 @@ type LoginReturn struct {
 func (c *LoginController) Login() {
 	if c.Ctx.Request.Method == "GET" {
 		c.Data["title"] = "登陆"
-		c.Layout = "layout.html"
+		c.Layout = "layout_without_header.html"
 		c.TplName = "sensor/login.html"
 	} else {
 		var loginResponse = new(LoginReturn)
