@@ -9,5 +9,6 @@ type SearchController struct {
 }
 
 func (c *SearchController) Search() {
+	c.Layout = "layout.html"
 	c.TplName = "search.html"
 }

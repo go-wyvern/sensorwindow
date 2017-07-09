@@ -286,7 +286,6 @@ $(function(){
 	initPromptList();
 	initHotProductList();
 	initSensorProductGrid();
-	initFooterMenu();
 	var flag = 0;
 	$("#more_brand_link").on("click",function(){
 		if(flag==0){

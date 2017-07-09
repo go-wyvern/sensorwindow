@@ -1,39 +1,15 @@
-<!DOCTYPE html>
-<html lang="en">
-<head>
-    <meta charset="UTF-8">
-    <title>Title</title>
-    <script  src="https://code.jquery.com/jquery-2.2.4.min.js" integrity="sha256-BbhdlvQf/xTY9gja0Dq3HiwQF8LaCRTXxZKRutelT44="   crossorigin="anonymous"></script>
-    <script src="/statics/js/bootstrap.min.js"></script>
-    <script>
-        $(function(){
-            var includes = $('[data-include]');
-            jQuery.each(includes, function(){
-                var file = '/statics/common/' + $(this).data('include') + '.html';
-                $(this).load(file);
-            });
-        });
-    </script>
-</head>
-<body>
-    <div data-include="commonTemplate"></div>
-    <div data-include="header"></div>
-    <div class="container">
-        <div class="row" id="brand_list"></div>
-        <div class="row">
-            <div class="col-sm-3" style="width: 20%">
-                <a href="#"><img src="/statics/images/productBanner01.jpg"></a>
-                <a href="#"><img src="/statics/images/productBanner02.jpg"></a>
-            </div>
-            <div class="col-sm-9" id="search_result_list" style="width: 78%">
+<link rel="stylesheet" type="text/css" href="/statics/css/search.css">
+<link rel="stylesheet" type="text/css" href="/statics/css/index.css">
+<div class="container">
+    <div class="row" id="brand_list"></div>
+    <div class="row">
+        <div class="col-sm-3" style="width: 20%">
+            <a href="#"><img src="/statics/images/productBanner01.jpg"></a>
+            <a href="#"><img src="/statics/images/productBanner02.jpg"></a>
+        </div>
+        <div class="col-sm-9" id="search_result_list" style="width: 78%">
 
-            </div>
         </div>
     </div>
-    <div data-include="footer"></div>
-    <script   src="https://code.jquery.com/jquery-2.2.4.min.js" integrity="sha256-BbhdlvQf/xTY9gja0Dq3HiwQF8LaCRTXxZKRutelT44="   crossorigin="anonymous"></script>
-    <script src="/statics/js/bootstrap.min.js"></script>
-    <script type="text/javascript" src="/statics/js/common.js"></script>
-    <script type="text/javascript" src="/statics/js/search.js"></script>
-</body>
-</html>
+</div>
+<script type="text/javascript" src="/statics/js/search.js"></script>
