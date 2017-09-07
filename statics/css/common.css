@@ -2,6 +2,9 @@ body, textarea, input, button, select, keygen, legend {
 	font: 12px/1.14 微软雅黑;
 	color: #333;
 }
+.navbar-nav .userinfo a {
+    display: inline-block;
+}
 .clearfix{
 	clear: both;
 }
@@ -96,11 +99,11 @@ a:hover, a:focus{
 	width: 632px;
 	min-height: 313px;
 	position: absolute;
-	left: 17.55%;
+	left: 17.5%;
 	z-index: 10000;
 	background-color: #fff;
-	border-right: 1px solid #c81623;
-	border-bottom: 1px solid #c81623;
+	border-right: 1px solid #0c5a94;
+	border-bottom: 1px solid #0c5a94;
 }
 .nav_menu_ul{
 	margin-left: -15px;
@@ -111,7 +114,7 @@ a:hover, a:focus{
 	line-height: 31px;
 }
 .nav_menu_ul li a:focus,.nav_menu_ul li a:hover{
-	color: #c81623;
+	color: #0c5a94;
 	background-color:#fff;
 }
 .nav_menu_ul li a{

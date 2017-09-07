@@ -45,15 +45,39 @@ func GetCategories() ([]Category, error) {
 	return categories, err
 }
 
-func GetCategoriesGroup(root_categories, categories []Category) map[string][]string {
-	var group = make(map[string][]string)
-	var root = make(map[uint]string)
-	for _, r := range root_categories {
-		root[r.ID] = r.EnglishName
-	}
+func GetCategoriesGroup(categories []Category) map[uint][]Category {
+	var group = make(map[uint][]Category)
 
 	for _, c := range categories {
-		group[root[*c.ParentCategory]] = append(group[root[*c.ParentCategory]], c.Name)
+		group[*c.ParentCategory] = append(group[*c.ParentCategory], c)
 	}
 	return group
+}
+
+func GetCategory(id int, fields []string) (*Category, error) {
+	var c = new(Category)
+	var tempDb *gorm.DB = Db
+	if len(fields) != 0 {
+		tempDb = tempDb.Select(fields)
+	}
+	err := tempDb.Model(Category{}).Where("id = ?", id).First(c).Error
+	return c, err
+}
+
+func GetCategoryIDs(id int) ([]uint, error) {
+	var ids []uint
+	if id == 0 {
+		return ids, nil
+	}
+	ids = append(ids, uint(id))
+	c, err := GetCategory(id, []string{"id"})
+	if err != nil {
+		return nil, err
+	}
+	if c.ParentCategory == nil {
+		return ids, nil
+	} else {
+		return GetCategoryIDs(int(*c.ParentCategory))
+	}
+
 }

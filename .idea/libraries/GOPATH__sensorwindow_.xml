@@ -1,0 +1,66 @@
+<component name="libraryTable">
+  <library name="GOPATH &lt;sensorwindow&gt;">
+    <CLASSES>
+      <root url="file://$PROJECT_DIR$/../../../git.pingxx.com" />
+      <root url="file://$PROJECT_DIR$/../../../testblog" />
+      <root url="file://$PROJECT_DIR$/../../../wechat-test" />
+      <root url="file://$PROJECT_DIR$/../../../api_demo" />
+      <root url="file://$PROJECT_DIR$/../../../deploy" />
+      <root url="file://$PROJECT_DIR$/../../../9fans.net" />
+      <root url="file://$PROJECT_DIR$/../../../pingpp-log" />
+      <root url="file://$PROJECT_DIR$/../../../.idea" />
+      <root url="file://$PROJECT_DIR$/../../../pingxx-goSdk-test" />
+      <root url="file://$PROJECT_DIR$/../../../code.google.com" />
+      <root url="file://$PROJECT_DIR$/../../../testflash" />
+      <root url="file://$PROJECT_DIR$/../../../liqian" />
+      <root url="file://$PROJECT_DIR$/../../../async_script" />
+      <root url="file://$PROJECT_DIR$/../../../sourcegraph.com" />
+      <root url="file://$PROJECT_DIR$/../../../house_status" />
+      <root url="file://$PROJECT_DIR$/../../../test" />
+      <root url="file://$PROJECT_DIR$/../../../gomitmproxy" />
+      <root url="file://$PROJECT_DIR$/../../../qlang" />
+      <root url="file://$PROJECT_DIR$/../../../ar_test" />
+      <root url="file://$PROJECT_DIR$/../../../codis-client" />
+      <root url="file://$PROJECT_DIR$/../../../webhook-resend" />
+      <root url="file://$PROJECT_DIR$/../.." />
+      <root url="file://$PROJECT_DIR$/../../../pingpp-ar" />
+      <root url="file://$PROJECT_DIR$/../../../soft_platform" />
+      <root url="file://$PROJECT_DIR$/../../../xml" />
+      <root url="file://$PROJECT_DIR$/../../../gogs.wyvern.site" />
+      <root url="file://$PROJECT_DIR$/../../../myleego" />
+      <root url="file://$PROJECT_DIR$/../../../pingpp-sm" />
+      <root url="file://$PROJECT_DIR$/../../../honnef.co" />
+      <root url="file://$PROJECT_DIR$/../../../fortest" />
+      <root url="file://$PROJECT_DIR$/../../../pingpp-go" />
+      <root url="file://$PROJECT_DIR$/../../../flash" />
+      <root url="file://$PROJECT_DIR$/../../../helloworld" />
+      <root url="file://$PROJECT_DIR$/../../../gosendcloud" />
+      <root url="file://$PROJECT_DIR$/../../../go2o" />
+      <root url="file://$PROJECT_DIR$/../../../utils" />
+      <root url="file://$PROJECT_DIR$/../../../select" />
+      <root url="file://$PROJECT_DIR$/../../../down" />
+      <root url="file://$PROJECT_DIR$/../../../goflarum" />
+      <root url="file://$PROJECT_DIR$/../../../gopkg.in" />
+      <root url="file://$PROJECT_DIR$/../../../api-dashboard" />
+      <root url="file://$PROJECT_DIR$/../../../github.com.bak" />
+      <root url="file://$PROJECT_DIR$/../../../nsq_client" />
+      <root url="file://$PROJECT_DIR$/../../../google.golang.org" />
+      <root url="file://$PROJECT_DIR$/../../../pingpp-pubservice" />
+      <root url="file://$PROJECT_DIR$/../../../beego-bbs" />
+      <root url="file://$PROJECT_DIR$/../../../monitor" />
+      <root url="file://$PROJECT_DIR$/../../../pingxx_pay" />
+      <root url="file://$PROJECT_DIR$/../../../wechatdemo" />
+      <root url="file://$PROJECT_DIR$/../../../qiniupkg.com" />
+      <root url="file://$PROJECT_DIR$/../../../qlang.io" />
+      <root url="file://$PROJECT_DIR$/../../../codisdemo" />
+      <root url="file://$PROJECT_DIR$/../../../mail" />
+      <root url="file://$PROJECT_DIR$/../../../golang.org" />
+      <root url="file://$PROJECT_DIR$/../../../qor" />
+      <root url="file://$PROJECT_DIR$/../../../http-proxy" />
+    </CLASSES>
+    <SOURCES />
+    <excluded>
+      <root url="file://$PROJECT_DIR$" />
+    </excluded>
+  </library>
+</component>

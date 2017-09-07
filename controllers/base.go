@@ -9,10 +9,21 @@ import (
 type BaseController struct {
 	beego.Controller
 	i18n.Locale
-	user    models.User
+	user    *models.User
 	isLogin bool
 }
 
 func (c *BaseController) Prepare() {
-	// fmt.Println("-----------")
+	if passtoken := c.Ctx.GetCookie("passtoken"); passtoken != "" {
+		uid, ok, _ := models.GetPassToken(passtoken)
+		if ok {
+			u, err := models.FindUserByUserID(uid)
+			if err == nil {
+				c.Data["user"] = u
+				c.user = u
+				c.isLogin = true
+			}
+		}
+	}
+	c.Layout = "layout.html"
 }

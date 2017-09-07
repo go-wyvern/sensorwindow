@@ -1,3 +1,11 @@
+#search_nav{
+    z-index: 100;
+    position: absolute;
+    width: 97.5%;
+}
+.nav_content {
+    left: 16.66666667%;
+}
 .search{
     height: 315px;
     width: 170px;
@@ -33,4 +41,68 @@
 .product_code{
     font-weight: bold;
     line-height: 24px;
+}
+#hot_breadcrumb{
+    height: 30px;
+    margin-top: 10px;
+}
+
+#hot_breadcrumb .breadcrumb{
+    background-color: white;
+}
+#hot_breadcrumb .breadcrumb a{
+    font-size: 13px;
+    color: #000;
+}
+#hot_breadcrumb .breadcrumb i{
+    font-size: 15px;
+    margin-left: 5px;
+    color: #000;
+    font-style:normal
+}
+#hot_breadcrumb .active{
+    color: #FF875C !important;
+    padding: 2px 5px;
+    border: 1px solid #FF875C;
+    line-height: 10px;
+    font-size: 12px !important;
+    position: relative;
+    top: -1px;
+}
+#hot_brand_list{
+    border-top: 2px solid #e2e2e2;
+    border-bottom: 2px solid #e2e2e2;
+    height: 155px;
+    margin-bottom: 20px;
+    margin-top: 10px;
+    border-top: 2px solid #e2e2e2;
+    border-bottom: 2px solid #e2e2e2;
+    padding: 6px 0px;
+}
+.hot_brand_list li{
+    display: inline-block;
+    float: left;
+    padding: 5px;
+}
+.hot_brand_list li a{
+    padding: 4px 10px;
+    max-width: 120px;
+    color: #333333;
+}
+.hot_brand_list li .brand_checked{
+    background-color: #FF875C;
+    color: #fff;
+}
+#search_result_list{
+    border-top: 2px solid #72191b;
+    border-left: 1px solid #ddd;
+    border-right: 1px solid #ddd;
+    padding: 20px 9px;
+}
+.page_nav{
+    display: block;
+    float: right;
+}
+.pagination{
+    float: right;
 }

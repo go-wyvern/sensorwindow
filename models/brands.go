@@ -35,3 +35,13 @@ func GetBrands(is_all bool, page, per_page int, fields []string) ([]Brand, error
 	}
 	return brands, err
 }
+
+func GetBrand(id int, fields []string) (*Brand, error) {
+	var brand = new(Brand)
+	var tempDb *gorm.DB = Db
+	if len(fields) != 0 {
+		tempDb = tempDb.Select(fields)
+	}
+	err := tempDb.Model(Brand{}).Where("id = ?", id).First(brand).Error
+	return brand, err
+}

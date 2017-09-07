@@ -3,23 +3,24 @@
  */
 //提交登录输入框内容
 var submitLoginInput = function () {
-    alert("111");
     var login_username = $("#login_username").val();
     var login_password = $("#login_password").val();
     var submit_params = {};
-    submit_params["username"] = login_username;
+    submit_params["user"] = login_username;
     submit_params["password"] = login_password;
     var post_url = "/login";
     $.post(post_url,submit_params,function (data) {
-        alert(data.Code);
-        if(data.Code){
-            window.location.href = "/login?username="+login_username;
+        console.log("post.............")
+        if(data.code!=0){
+            alert(data.message)
+        }else{
+            window.location.href="/"
         }
     });
 };
 //重置登录输入框
 var resetLoginInput = function () {
-
+    $("#login_form .form-group input").val("");
 };
 //初始化登陆页面
 var initLoginPage = function () {

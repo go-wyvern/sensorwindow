@@ -1,0 +1,23 @@
+{
+  "name": "sensorwindow",
+  "version": "1.0.0",
+  "description": " ",
+  "main": "index.js",
+  "directories": {
+    "test": "tests"
+  },
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "repository": {},
+  "keywords": [],
+  "author": "",
+  "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/go-wyvern/sensorwindow/issues"
+  },
+  "homepage": "https://github.com/go-wyvern/sensorwindow#readme",
+  "dependencies": {
+    "jquery": "^3.2.1"
+  }
+}

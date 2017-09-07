@@ -1,0 +1,510 @@
+
+<!DOCTYPE html>
+<html>
+<head>
+    <meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+    <meta http-equiv=X-UA-Compatible content="IE=edge,chrome=1">
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta name="keywords" content="买道,买道传感网,传感器,100% 正品保障,全场包邮" />
+    <meta name="description" content="传感器专业平台--众多品牌授权代理直接比价。平台承担验货，集货，售后，零库，选型，测评，培训等各类商服技服，全面保障中小微客户利益。汇聚堡盟、欧姆龙、倍加福、巴鲁夫、西克、邦纳、施耐德等全球知名传感品牌" />
+    <title>买到世界传感器 - 买道传感网</title>
+    <link href="/css/common.css?v=1" rel="stylesheet" />
+    <link href="/css/common-extend.css?v=1" rel="stylesheet" />
+    
+    <link href="/js/plugins/owl.carousel/owl.theme.css" rel="stylesheet" />
+    <link href="/js/plugins/owl.carousel/owl.carousel.css" rel="stylesheet" />
+    <link href="/css/home.css?v=1" rel="stylesheet" />
+    <style type="text/css">
+ .buyer_newFeatures {
+    width: 460px;
+    background-color: transparent;
+}
+.newFea-carousel img {
+    width: 460px;
+}
+.newFea-carousel .owl-buttons {
+    position: absolute;
+    width: 100%;
+    top: 50%;  
+}
+.newFea-carousel .owl-buttons>div {
+    position: absolute;
+    width: 30px;
+    line-height: 40px;
+    font-size: 40px;
+    text-align: center;
+    font-weight: bold;
+    color: #50a2cc;
+    transform:translateY(-50%);
+    -ms-transform:translateY(-50%);
+    -moz-transform:translateY(-50%); 
+    -webkit-transform:translateY(-50%); 
+    -o-transform:translateY(-50%); 
+}
+.newFea-carousel .owl-prev {
+    left: 10px;   
+}
+.newFea-carousel .owl-next {
+    right: 10px;
+}
+.newFea-carousel .owl-pagination {
+    text-align: center;
+    margin-top: 15px;
+}
+.newFea-carousel .owl-page {
+    display: inline-block;
+}
+.newFea-carousel .owl-page span {
+    display: inline-block;
+    width: 11px;
+    height: 11px;
+    border-radius: 50%;
+    background-color: #fff;
+    margin-right: 8px;
+}
+.newFea-carousel .owl-page.active span {
+    background-color: #2084ce;
+}
+
+body .swiperClass {
+    box-shadow: none;
+    background-color: transparent;
+}
+body .swiperClass .layui-layer-close2 {
+    right:-43px;
+    top: -8px
+}
+body .layui-layer-shade {
+    opacity:0.8 !important; 
+    filter:alpha(opacity=80) !important;
+}
+
+
+    </style>
+
+    <!--[if lt IE 8]>
+      <script src="http://cdn.bootcss.com/json2/20150503/json2.min.js"></script>
+    <![endif]-->
+
+</head>
+<body>
+    <!-- 页头部分 -->
+    <div class="header">
+        <div class="header-info">
+            <div class="header-info-container">
+                <ul class="pull-left">
+                    <li class="item">
+                        <a data-role="btn_fav">收藏买道</a>
+                    </li>
+                </ul>
+                <ul class="pull-right">
+                    <li class="item">
+                            
+                                请 <a class="text-black" href="/Member/LogOn">登录</a> <a class="text-red" href="/Member/Register">免费注册</a>
+                            
+                    </li>
+                    <li class="item divider"></li>
+                    <li class="item dropdown">
+                        <div class="dropdown-title"><a class="text-black" href="/Enquiry/">我的询价<b class="icon icon-arr"></b></a></div>
+                        <div class="dropdown-list">
+                            <ul data-role="newestEnquiryList">
+                                <li><a class="text-black">您暂未询价!</a></li>
+                            </ul>
+                        </div>
+                    </li>
+                    <li class="item divider"></li>
+                    <li class="item dropdown">
+                        <div class="dropdown-title"><a class="text-black" href="/Member/Welcome/">我的买道<b class="icon icon-arr"></b></a></div>
+                        <div class="dropdown-list">
+                            <ul>
+                                <li class="dlul01"><b class="icon dli01"></b><a href="/Enquiry/">我的询价</a></li>
+                                <li class="dlul02"><b class="icon dli02"></b><a href="/Order/">我的订单</a></li>
+                                <li class="dlul03"><b class="icon dli03"></b><a href="/Favorites/">我的收藏</a></li>
+                            </ul>
+                        </div>
+                    </li>
+                    <li class="item divider"></li>
+                    <li class="item item-letter"><span class="icon icon-letter"></span><a class="text-black" href="/News">站内信</a></li>
+                    <li class="item"><span class="icon icon-phone"></span><a class="text-red text-bold" href="#">021-51872140</a></li>
+                </ul>
+            </div>
+        </div>
+        <div class="header-main clearfix">
+            <div class="header-main-container">
+                <h1 class="logo">
+                    <a href="/" title="买道网"></a>
+                </h1>
+                <form class="search-form pull-left" action="/Product/Search" method="get">
+                    <div class="search-container">
+                        <input class="pull-left" type="hidden" name="Render" />
+                        <input class="pull-left" type="text" id="SearchKey" name="ProductModel" placeholder="搜索关键词" />
+                        <input class="pull-right" type="submit" value="搜&nbsp;索" />
+                    </div>
+                    <div class="search-info">
+                        <a class="text-black" href="/Product/Search?ProductModel=IGYX" title="IGYX">IGYX</a>
+                        <a class="text-black" href="/Product/Search?ProductModel=AMG" title="AMG">AMG</a>
+                        <a class="text-black" href="/Product/Search?ProductModel=IFRM" title="IFRM">IFRM</a>
+                        <a class="text-black" href="/Product/Search?BrandId=43" title="Baumer 堡盟">堡盟</a>
+                        <a class="text-black" href="/Product/Search?BrandId=45" title="Omron 欧姆龙">欧姆龙</a>
+                    </div>
+                </form>
+                <div class="headerIcons pull-right">
+                    <span class="pinkage"></span>
+                    <span class="goldeneye"></span>
+                </div>
+            </div>
+        </div>
+        <div class="header-navbar">
+            <div class="headerContent">
+                <ul class="navbar pull-left">
+                    <li class="navbar-item pull-left" style="margin-left: 0;"><a href="/">首页</a><span class="pull-right"></span></li>
+                    <li class="navbar-item pull-left"><a href="/Product/Search">所有产品<span class="pull-right navbar-item-last"></span></a></li>
+                </ul>
+                <div class="navbar-info pull-right">
+                    <i class="icon"></i>
+                    <a class="text-white text-bold" href="/Services/SecureShopping" title="正品保障！我们是怎样做到的">正品保障！</a>
+                    <a class="text-white" href="/Services/SecureShopping"  title="正品保障！我们是怎样做到的">我们是怎样做到的</a>
+                    <b class="icon"></b>
+                </div>
+            </div>
+        </div>
+    </div>
+    <!-- 页面主体 -->
+    <div class="main clearfix">
+        
+
+<!-- carousel -->
+<div class="owl-carousel">
+    <a class="item" title="买道2.2版，傲娇上线" href="/Activity/Subject/GoOnline"><img src="http://img.51mydao.com/banner/banner.jpg"></a>
+    <a class="item" href="/StaticPage/HomeActivityPage" title="首单全反"><img src="http://img.51mydao.com/home/indexBanner7.jpg" alt="全国代理商直接给您报价"></a>
+    <a class="item" title="传感技服，买道是认真的"><img src="http://img.51mydao.com/home/indexBanner8.jpg" alt="传感技服，买道是认真的"></a>
+    <a class="item" title="日常3小时，买道5分钟"><img src="http://img.51mydao.com/home/indexBanner2.jpg" alt="日常3小时，买道5分钟"></a>
+</div>
+<!-- carousel over -->
+<div class="indexAd">
+    <img src="/images/home/indexAd.jpg" />
+    <a href="/Member/Register" alt="免费注册会员"></a>
+</div>
+<div class="brandRanking">
+    <div class="brandRankingTitle">
+        <div class="brActive">销售品牌排行</div>
+        <div>关注品牌排行</div>
+    </div>
+    <div class="brands">
+        <ul class="brandBox sales">
+            <li>
+                <a href="http://www.51mydao.com/Product/Search?Render=Card&BrandId=41" title="Balluff 巴鲁夫">
+                    <img src="/images/home/BALLUFF.gif" alt="Balluff 巴鲁夫" />
+                </a>
+            </li>
+            <li>
+                <a href="http://www.51mydao.com/Product/Search?Render=Card&BrandId=42" title="Sick 西克">
+                    <img src="/images/home/SICK.gif" alt="Sick 西克" />
+                </a>
+            </li>
+            <li>
+                <a href="http://www.51mydao.com/Product/Search?Render=Card&BrandId=44" title="P+F 倍加福">
+                    <img src="/images/home/FUCHS.gif" alt="P+F 倍加福" />
+                </a>
+            </li>
+            <li>
+                <a href="http://www.51mydao.com/Product/Search?Render=Card&BrandId=40" title="Autonics 奥托尼克斯">
+                    <img src="/images/home/AUTONICS.gif" alt="Autonics 奥托尼克斯" />
+                </a>
+            </li>
+            <li>
+                <a href="http://www.51mydao.com/Product/Search?Render=Card&BrandId=53" title="Panasonic 松下">
+                    <img src="/images/home/panasonic.gif" alt="Panasonic 松下" />
+                </a>
+            </li>
+            <li>
+                <a href="http://www.51mydao.com/Product/Search?Render=Card&BrandId=32" title="LANBAO 兰宝">
+                    <img src="/images/home/LANBAO.gif" alt="LANBAO 兰宝" />
+                </a>
+            </li>
+            <li>
+                <a href="http://www.51mydao.com/Product/Search?Render=Card&BrandId=47" title="Wenglor 威格勒">
+                    <img src="/images/home/Wenglor.gif" alt="Wenglor 威格勒" />
+                </a>
+            </li>
+            <li>
+                <a href="http://www.51mydao.com/Product/Search?Render=Card&BrandId=45" title="Omron 欧姆龙">
+                    <img src="/images/home/OMRON.gif" alt="Omron 欧姆龙" />
+                </a>
+            </li>
+            <li>
+                <a href="http://www.51mydao.com/Product/Search?Render=Card&BrandId=33" title="Bedook 比杜克">
+                    <img src="/images/home/BEDOOK.gif" alt="Bedook 比杜克" />
+                </a>
+            </li>
+            <li>
+                <a href="http://www.51mydao.com/Product/Search?Render=Card&BrandId=43" title="Baumer 堡盟">
+                    <img src="/images/home/BAUMER.gif" alt="Baumer 堡盟" />
+                </a>
+            </li>
+            <li>
+                <a href="http://www.51mydao.com/Product/Search?Render=Card&BrandId=36" title="Banner 邦纳">
+                    <img src="/images/home/BANNER.gif" alt="Banner 邦纳" />
+                </a>
+            </li>
+            <li>
+                <a href="http://www.51mydao.com/Product/Search?Render=Card&BrandId=34" title="FOTEK 阳明">
+                    <img src="/images/home/EOIEK.gif" alt="FOTEK 阳明" />
+                </a>
+            </li>
+            <li>
+                <a href="http://www.51mydao.com/Product/Search?Render=Card&BrandId=48" title="Contrinex 堪泰">
+                    <img src="/images/home/CONTRINEX.gif" alt="Contrinex 堪泰" />
+                </a>
+            </li>
+            <li>
+                <a href="http://www.51mydao.com/Product/Search?Render=Card&BrandId=8005" title="SCHNEIDER 施耐德">
+                    <img src="/images/home/SCHNEIDER.gif" alt="SCHNEIDER 施耐德" />
+                </a>
+            </li>
+        </ul>
+        <ul class="brandBox focus">
+            <li>
+                <a href="http://www.51mydao.com/Product/Search?Render=Card&BrandId=32" title="LANBAO 兰宝">
+                    <img src="/images/home/LANBAO.gif" alt="LANBAO 兰宝" />
+                </a>
+            </li>
+            <li>
+                <a href="http://www.51mydao.com/Product/Search?Render=Card&BrandId=41" title="Balluff 巴鲁夫">
+                    <img src="/images/home/BALLUFF.gif" alt="Balluff 巴鲁夫" />
+                </a>
+            </li>
+            <li>
+                <a href="http://www.51mydao.com/Product/Search?Render=Card&BrandId=44" title="P+F 倍加福">
+                    <img src="/images/home/FUCHS.gif" alt="P+F 倍加福" />
+                </a>
+            </li>
+            <li>
+                <a href="http://www.51mydao.com/Product/Search?Render=Card&BrandId=42" title="Sick 西克">
+                    <img src="/images/home/SICK.gif" alt="Sick 西克" />
+                </a>
+            </li>
+            <li>
+                <a href="http://www.51mydao.com/Product/Search?Render=Card&BrandId=53" title="Panasonic 松下">
+                    <img src="/images/home/panasonic.gif" alt="Panasonic 松下" />
+                </a>
+            </li>
+            <li>
+                <a href="http://www.51mydao.com/Product/Search?Render=Card&BrandId=40" title="Autonics 奥托尼克斯">
+                    <img src="/images/home/AUTONICS.gif" alt="Autonics 奥托尼克斯" />
+                </a>
+            </li>
+            <li>
+                <a href="http://www.51mydao.com/Product/Search?Render=Card&BrandId=33" title="Bedook 比杜克">
+                    <img src="/images/home/BEDOOK.gif" alt="Bedook 比杜克" />
+                </a>
+            </li>
+            <li>
+                <a href="http://www.51mydao.com/Product/Search?Render=Card&BrandId=43" title="Baumer 堡盟">
+                    <img src="/images/home/BAUMER.gif" alt="Baumer 堡盟" />
+                </a>
+            </li>
+            <li>
+                <a href="http://www.51mydao.com/Product/Search?Render=Card&BrandId=47" title="Wenglor 威格勒">
+                    <img src="/images/home/Wenglor.gif" alt="Wenglor 威格勒" />
+                </a>
+            </li>
+            <li>
+                <a href="http://www.51mydao.com/Product/Search?Render=Card&BrandId=45" title="Omron 欧姆龙">
+                    <img src="/images/home/OMRON.gif" alt="Omron 欧姆龙" />
+                </a>
+            </li>
+            <li>
+                <a href="http://www.51mydao.com/Product/Search?Render=Card&BrandId=8005" title="SCHNEIDER 施耐德">
+                    <img src="/images/home/SCHNEIDER.gif" alt="SCHNEIDER 施耐德" />
+                </a>
+            </li>
+            <li>
+                <a href="http://www.51mydao.com/Product/Search?Render=Card&BrandId=36" title="Banner 邦纳">
+                    <img src="/images/home/BANNER.gif" alt="Banner 邦纳" />
+                </a>
+            </li>
+            <li>
+                <a href="http://www.51mydao.com/Product/Search?Render=Card&BrandId=34" title="FOTEK 阳明">
+                    <img src="/images/home/EOIEK.gif" alt="FOTEK 阳明" />
+                </a>
+            </li>
+            <li>
+                <a href="http://www.51mydao.com/Product/Search?Render=Card&BrandId=48" title="Contrinex 堪泰">
+                    <img src="/images/home/CONTRINEX.gif" alt="Contrinex 堪泰" />
+                </a>
+            </li>
+        </ul>
+    </div>
+</div>
+<div class="linkExchange">
+    <h6>友情链接</h6>
+    <div>
+        <a href="http://www.autonicschina.com/" target="_blank">AUTONICS 奥托尼克斯</a>
+        <a href="http://www.azbil.com/cn/products/factory/index.html" target="_blank">AZBIL (YAMATAKE) 阿自倍尔（山武）</a>
+        <a href="http://www.balluff.com/balluff/MCN/zh/home.jsp" target="_blank">BALLUFF 巴鲁夫</a>
+        <a href="http://www.bannerengineering.com.cn/?q=zh-CN/" target="_blank">BANNER 邦纳</a>
+        <a href="http://www.baumer.com/cn-zh/" target="_blank">BAUMER 堡盟</a>
+        <a href="http://www.bedooksensor.com/" target="_blank">BEDOOK 比杜克</a>
+        <a href="http://www.bernstein-safesolutions.cn/" target="_blank">BERNSTEIN 博恩斯坦</a>
+        <a href="http://www.contrinex.com" target="_blank">CONTRINEX 堪泰</a>
+        <a href="http://www.datalogic.com/" target="_blank">DATALOGIC 得利捷</a>
+        <a href="http://www.fotek.com.tw/" target="_blank">FOTEK 阳明</a>
+        <a href="http://www.hengstler.com.cn/about_us" target="_blank">HENGSTLER 亨士乐</a>
+        <a href="http://www.kuebler.cn/" target="_blank">KUBLER 库伯勒</a>
+        <a href="http://www.shlanbao.cn/" target="_blank">LANBAO 兰宝</a>
+        <a href="http://www.leuze.com.cn/cn/china/" target="_blank">LEUZE 劳易测</a>
+        <a href="http://www.microdetectors.com/" target="_blank">MICRO DETECTORS 墨迪</a>
+        <a href="https://www.fa.omron.com.cn/" target="_blank">OMRON 欧姆龙</a>
+        <a href="http://www.optex-fa.cn/" target="_blank">OPTEX奥泰斯</a>
+        <a href="http://device.panasonic.cn/ac/c/fasys/" target="_blank">PANASONIC (SUNX) 松下（神视）</a>
+        <a href="http://www.pepperl-fuchs.cn/china/zh/index.htm" target="_blank">PEPPERL+FUCHS 倍加福</a>
+        <a href="http://www.schneider-electric.cn/zh/" target="_blank">SCHNEIDER-ELECTRIC 施耐德电气</a>
+        <a href="http://www.sensopart.cn/" target="_blank">SENSOPART 森萨帕特</a>
+        <a href="https://www.sick.com/cn/zh/" target="_blank">SICK 西克</a>
+        <a href="https://www.takex-elec.co.jp/en/" target="_blank">TAKEX 竹中</a>
+        <a href="http://www.tofi-tech.com/" target="_blank">TOFI 托菲</a>
+        <a href="https://www.wenglor.com/index.php?id=567&L=5" target="_blank">WENGLOR 威格勒</a>
+    </div>
+</div>
+
+
+    </div>
+    <!-- 页脚部分 -->
+    <!-- 页脚部分 -->
+    <div class="footer">
+        <div class="footer-link">
+            <div class="footer-link-container">
+                <div class="footer-link-services pull-left">
+                    <span><b class="icon"></b><a href="/Services/Enquiry" title="购物指南">购物指南</a></span>
+                    <span><b class="flss-02 icon"></b><a href="/Services/Invoice" title="售后服务">售后服务</a></span>
+                    <span><b class="flss-03 icon"></b><a href="/Services/Intro" title="关于买道">关于买道</a></span>
+                </div>
+                <div class="footer-link-tabs pull-left">
+                    <ul>
+                        <li>
+                            <a href="/Services/Enquiry" title="询价说明">询价说明</a>
+                            <a href="/Services/Bargain" title="议价说明">议价说明</a>
+                            <a href="/Services/Order" title="订单说明">订单说明</a>
+                            <a href="/Services/TradingRule" title="交易规则">交易规则</a>
+                            <a class="footer-link-last-text" href="/Services/Score" title="积分说明">积分说明</a>
+                        </li>
+                        <li>
+                            <a href="/Services/Invoice" title="发票说明">发票说明</a>
+                            <a href="/Services/Carriage" title="运费承担">运费承担</a>
+                            <a href="/Services/SecureShopping" title="购物保障">购物保障</a>
+                            <a href="/Services/RefundsOrExchanges" title="退\换货服务">退\换货服务</a>
+                            <a class="footer-link-last-text" href="/Services/InfoSafety" title="信息安全">信息安全</a>
+                        </li>
+                        <li>
+                            <a href="/Services/Intro" title="买道简介">买道简介</a>
+                            <a href="/Services/Foundation" title="橙色阳光基金">橙色阳光基金</a>
+                            <a href="/Services/Service" title="买道服务">买道服务</a>
+                            <a href="/Services/JoinUs" title="聚义买道">聚义买道</a>
+                            <a class="footer-link-last-text" href="/Services/ContactUs" title="联系我们">联系我们</a>
+                        </li>
+                    </ul>
+                </div>
+                <div class="footer-link-wechat pull-left"><a></a></div>
+            </div>
+        </div>
+        <div class="footer-copyright clearfix">
+            沪ICP备15013370号 <a href="/" title="买道传感网">买道传感网</a>  Copyright 2012-2016 © 买道 All Rights Reserved  
+        </div>
+        <img style="display:none;" src="http://img.51mydao.com/image/tu3.png" />
+    </div>
+    <script src="/js/jquery.min.js"></script>
+    <script src="/js/jquery.form.js"></script>
+    <script src="/js/jquery.validate.js"></script>
+    <script src="/js/FormToObject.js"></script>
+    <script src="/js/plugins/layer/layer.js"></script>
+    <script src="/js/common.js?v=1"></script>
+    <script src="/js/IndustrySelector.js"></script>
+    <!--[if lt IE 10]>
+        <script src="/js/plugins/fly/requestAnimationFrame.js"></script>
+    <![endif]-->
+    <script src="/js/plugins/fly/jquery.fly.min.js"></script>
+    <script src="/js/MaiDaoApi.js?v=1"></script>
+    <script src="/js/plugins/typeahead/typeahead.jquery.js"></script>
+    <script src="/js/plugins/typeahead/typeahead.bundle.js"></script>
+    <script src="/js/plugins/typeahead/bloodhound.js"></script>
+    
+    <script src="/js/plugins/owl.carousel/owl.carousel.js"></script>
+    <script src="/js/home.js"></script>
+    <script>
+        (function () {
+            var bp = document.createElement('script');
+            var curProtocol = window.location.protocol.split(':')[0];
+            if (curProtocol === 'https') {
+                bp.src = 'https://zz.bdstatic.com/linksubmit/push.js';
+            }
+            else {
+                bp.src = 'http://push.zhanzhang.baidu.com/push.js';
+            }
+            var s = document.getElementsByTagName("script")[0];
+            s.parentNode.insertBefore(bp, s);
+        })();
+    </script>
+
+<script>
+    function layerV2() {
+        //页面层-自定义
+        layer.open({
+            type: 1,
+            title: false,
+            closeBtn: 2,
+            shadeClose: false,
+            area: ['460px', '410px'],
+            skin: 'swiperClass',
+            content: $('.buyer_newFeatures').show()
+        });
+        if (localStorage) {
+            localStorage.setItem('BuyerisShowNewV', 'yes');
+        }
+    }
+
+    $(document).ready(function () {
+        var isShowNewV = localStorage.getItem('BuyerisShowNewV');
+        if (isShowNewV != 'yes') {
+            $('.newFea-carousel').owlCarousel({
+                loop: true,
+                navigation: true,
+                slideSpeed: 300,
+                stopOnHover: true,
+                paginationSpeed: 400,
+                singleItem: true,
+                autoPlay: 5000,
+                navigationText: ['<', '>']
+            });
+            layerV2();
+        }
+      })
+</script>
+<!--新功能swiper-->
+<div class="buyer_newFeatures" style="display: none;">
+    <div class="newFea-carousel owl-carousel">
+        <div class="item"><img src="http://img.51mydao.com/image/V2.2/v2_swiper01.png" alt="提交询价"></div>
+        <div class="item"><img src="http://img.51mydao.com/image/V2.2/v2_swiper02.png" alt="询价后可砍价"></div>
+        <div class="item"><img src="http://img.51mydao.com/image/V2.2/v2_swiper03.png" alt="支持线上支付"></div>
+        <div class="item"><img src="http://img.51mydao.com/image/V2.2/v2_swiper04.png" alt="签订框架协议"></div>
+        <div class="item"><img src="http://img.51mydao.com/image/V2.2/v2_swiper05.png" alt="我的产品顾问"></div>
+    </div>
+</div>
+<!--end swiper-->
+
+    <script type="text/javascript">
+        MaiDaoApi.Init();
+        var cnzz_protocol = (("https:" == document.location.protocol) ? " https://" : " http://");
+        document.write(unescape("%3Cspan id='cnzz_stat_icon_1259045965' style='display:none;'  %3E%3C/span%3E%3Cscript src='" + cnzz_protocol + "s4.cnzz.com/z_stat.php%3Fid%3D1259045965%26show%3Dpic1' type='text/javascript'%3E%3C/script%3E"));
+    
+        var _hmt = _hmt || [];
+        (function () {
+            var hm = document.createElement("script");
+            hm.src = "//hm.baidu.com/hm.js?a3f05b5968b352de30d2a9c8a4eb2a52";
+            var s = document.getElementsByTagName("script")[0];
+            s.parentNode.insertBefore(hm, s);
+        })();
+    </script>
+</body>
+</html>

@@ -1,8 +1,24 @@
-<link rel="stylesheet" type="text/css" href="/statics/css/search.css">
 <link rel="stylesheet" type="text/css" href="/statics/css/index.css">
-<div class="container">
-    <div class="row" id="brand_list"></div>
-    <div class="row">
+<link rel="stylesheet" type="text/css" href="/statics/css/search.css">
+<script>
+        var brands = {{.brands}}
+        var product = {{.product}}
+        var chech_brand = {{.chech_brand}}
+        var root_category = {{.root_category}}
+	    var leaf_category = {{.leaf_category}}
+        console.log(root_category)
+        console.log(leaf_category)
+        var title = {{.title}}
+        $("title").html(title);
+</script>
+<div class="main container">
+    <div class="row" id="search_nav">
+        <div class="col-sm-2" id="nav_menu" hidden tabindex="0"></div>
+        <div class="nav_content" id="nav_content" hidden tabindex="0" onblur="hideNavContent()"></div>
+    </div>
+    <div class="row" id="hot_breadcrumb"></div>
+    <div class="row" id="hot_brand_list"></div>
+    <div class="row" id="hot_goods">
         <div class="col-sm-3" style="width: 20%">
             <a href="#"><img src="/statics/images/productBanner01.jpg"></a>
             <a href="#"><img src="/statics/images/productBanner02.jpg"></a>
@@ -12,4 +28,5 @@
         </div>
     </div>
 </div>
+<script type="text/javascript" src="/statics/js/header.js"></script>
 <script type="text/javascript" src="/statics/js/search.js"></script>

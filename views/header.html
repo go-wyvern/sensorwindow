@@ -7,8 +7,15 @@
 						<li><a href="#">收藏SensorWindow</a></li>
 					</ul>
 					<ul class="nav navbar-nav navbar-right">
-						<li><a href="/login">登陆</a></li>
-						<li><a href="/register" style="color: red">免费注册</a></li>
+							{{if .user}}
+							<li class="userinfo">欢迎
+								<a href="/sensor/user?user_id={{.user.UserID}}">{{.user.UserName}}</a>
+								<a href="logout" style="color: red">[退出]</a>
+							</li>
+							{{else}}
+							<li><a href="/login">登陆</a></li>
+							<li><a href="/register" style="color: red">免费注册</a></li>
+							{{end}}
 						<li class="dropdown">
           				<a href="#" class="dropdown-toggle" data-toggle="dropdown" role="button" aria-haspopup="true" aria-expanded="false">您的询价<span class="caret"></span></a>
 				          <ul class="dropdown-menu">

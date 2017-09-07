@@ -1,6 +1,8 @@
 
 <link rel="stylesheet" type="text/css" href="/statics/css/index.css">
 <script>
+	var user = {{.user}}
+	console.log(user)
 	var root_category = {{.root_category}}
 	var brands = {{.brands}}
 	var leaf_category = {{.leaf_category}}
@@ -9,7 +11,7 @@
 </script>
 
 <div class="main container">
-	<div class="row">
+	<div class="row" id="index_nav">
 		<div class="col-sm-2" id="nav_menu"></div>
 		<div class="nav_content" id="nav_content" hidden tabindex="0" onblur="hideNavContent()"></div>
 		<div class="col-sm-8" id="index_slider_div">
@@ -114,5 +116,6 @@
 
 	</div>
 </div>
+<script type="text/javascript" src="/statics/js/header.js"></script>
 <script type="text/javascript" src="/statics/js/index.js"></script>
 
