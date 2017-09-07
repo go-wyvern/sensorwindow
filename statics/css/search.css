@@ -61,9 +61,9 @@
     font-style:normal
 }
 #hot_breadcrumb .active{
-    color: #FF875C !important;
+    color: #5CC0FF !important;
     padding: 2px 5px;
-    border: 1px solid #FF875C;
+    border: 1px solid #5CC0FF;
     line-height: 10px;
     font-size: 12px !important;
     position: relative;
@@ -90,19 +90,19 @@
     color: #333333;
 }
 .hot_brand_list li .brand_checked{
-    background-color: #FF875C;
+    background-color: #5CC0FF;
     color: #fff;
 }
 #search_result_list{
-    border-top: 2px solid #72191b;
+    border-top: 2px solid #182E72;
     border-left: 1px solid #ddd;
     border-right: 1px solid #ddd;
     padding: 20px 9px;
 }
 .page_nav{
     display: block;
-    float: right;
+    text-align: center;
 }
 .pagination{
-    float: right;
+    text-align: center;
 }

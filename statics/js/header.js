@@ -1,8 +1,9 @@
+var in_munu=false
+var in_content=false
 var showNavContent = function(category){
 	var nav_content_list = leaf_category
 	//生成nav_content div
 	$("#nav_content").html("");
-	console.log(nav_content_list)
 	var nav_content = nav_content_list[category];
 	var nav_content_ul = $("<ul id='nav_content_ul'></ul>");
 	for (var i=0; i<nav_content.length; i++){
@@ -32,11 +33,36 @@ var initNavMenu = function(){
 		nav_ul.append(category_name_li);
 	}
 	$("#nav_menu").append(nav_ul);
-	$("#nav_content").hover(function(){
-		$("#nav_content").show()
-	},function(){
-		$("#nav_content").hide();
+	$("#nav_menu").hover(function(){
+        in_munu=true
+    },function(){
+        in_munu=false
 	});
+	$("#nav_content").hover(function(){
+		in_content=true
+		$("#nav_content").show();
+	},function(){
+		in_content=false
+		$("#nav_content").hide();
+		setTimeout(function(){
+			if(!in_munu){
+				$(".nav_menu_ul li.active").removeClass("active");
+			}
+		},100)
+	});
+    $(".nav_menu_ul li").hover(function(){
+		$(".nav_menu_ul li.active").removeClass("active");
+        $(this).addClass("active");
+    },function(){
+		setTimeout(function(){
+			if(!in_content){
+				if(!in_munu){
+					$(".nav_menu_ul li.active").removeClass("active");
+				}
+			}
+		},100)   
+    })
+   
 };
 $(function(){
     initNavMenu();

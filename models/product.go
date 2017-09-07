@@ -36,11 +36,8 @@ type Caption struct {
 func GetProducts(p *Pagination, brand_id int, category_id []uint, fields []string) ([]Product, error) {
 	var products []Product
 	var err error
-	var tempDb *gorm.DB = Db
-	tempDb, err = p.Paginate(tempDb.Model(Product{}))
-	if err != nil {
-		return nil, err
-	}
+	var tempDb *gorm.DB = Db.Model(Product{})
+
 	if len(fields) != 0 {
 		tempDb = tempDb.Select(fields)
 	}
@@ -50,7 +47,11 @@ func GetProducts(p *Pagination, brand_id int, category_id []uint, fields []strin
 	if len(category_id) != 0 {
 		tempDb = tempDb.Where("category_id in (?)", category_id)
 	}
-	err = tempDb.Model(Product{}).Find(&products).Error
+	tempDb, err = p.Paginate(tempDb)
+	if err != nil {
+		return nil, err
+	}
+	err = tempDb.Find(&products).Error
 	if err == nil {
 		for i, p := range products {
 			brand, err := GetBrand(int(p.BrandID), []string{"brand_name"})

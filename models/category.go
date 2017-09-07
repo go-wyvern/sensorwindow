@@ -70,14 +70,18 @@ func GetCategoryIDs(id int) ([]uint, error) {
 		return ids, nil
 	}
 	ids = append(ids, uint(id))
-	c, err := GetCategory(id, []string{"id"})
+	c, err := GetCategory(id, []string{"id", "parent_category"})
 	if err != nil {
 		return nil, err
 	}
 	if c.ParentCategory == nil {
 		return ids, nil
 	} else {
-		return GetCategoryIDs(int(*c.ParentCategory))
+		new_ids, err := GetCategoryIDs(int(*c.ParentCategory))
+		if err != nil {
+			return nil, err
+		}
+		return append(ids, new_ids...), nil
 	}
 
 }

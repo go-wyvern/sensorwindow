@@ -113,9 +113,12 @@ a:hover, a:focus{
 	list-style: none;
 	line-height: 31px;
 }
-.nav_menu_ul li a:focus,.nav_menu_ul li a:hover{
+.nav_menu_ul li.active{
 	color: #0c5a94;
 	background-color:#fff;
+}
+.nav_menu_ul li.active a{
+	color: #0c5a94;
 }
 .nav_menu_ul li a{
 	color: #fff;

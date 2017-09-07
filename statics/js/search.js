@@ -1,12 +1,15 @@
 /**
  * Created by liqian on 2/7/17.
  */
+
 var initSearchResultGrid = function(){
     var params = product;
-    Swin.genPageGrid("search_result_list",params,"search");
+    var page = pagination
+    Swin.genPageGrid("search_result_list",params,"search",page);
 };
 //初始化brand list
 var initHotBrandList = function(){
+    var category_id = getUrlParam("category_id")
     var hot_brand_list = brands;
     var hot_checked_brand = chech_brand
     var hot_brand_title_div = $("<div class='col-sm-1' id='hb_introduction'>热销品牌:</div>");
@@ -15,9 +18,9 @@ var initHotBrandList = function(){
     for(var i=0; i<hot_brand_list.length; i++){
         var hot_brand = hot_brand_list[i];
         if(hot_checked_brand.id==hot_brand.id){
-            var hot_brand_li = $("<li><a class='brand_checked' href=/search?brand_id="+hot_brand.id+" data-bid='"+hot_brand.id+"'>"+hot_brand.brand_name+"</a></li>");
+            var hot_brand_li = $("<li><a class='brand_checked' href=/search?category_id="+category_id+"&brand_id="+hot_brand.id+" data-bid='"+hot_brand.id+"'>"+hot_brand.brand_name+"</a></li>");
         }else{
-            var hot_brand_li = $("<li><a href=/search?brand_id="+hot_brand.id+" data-bid='"+hot_brand.id+"'>"+hot_brand.brand_name+"</a></li>");
+            var hot_brand_li = $("<li><a href=/search?category_id="+category_id+"&brand_id="+hot_brand.id+" data-bid='"+hot_brand.id+"'>"+hot_brand.brand_name+"</a></li>");
         }
         hot_brand_content_ul.append(hot_brand_li);
     }
@@ -26,14 +29,19 @@ var initHotBrandList = function(){
     $("#hot_brand_list").append(hot_brand_content_div);
 };
 var initBreadcrumb= function(){
-    var hot_checked_brand = chech_brand
-    if(hot_checked_brand.id>0){
-        var hot_breadcrumb = $("<ol class='breadcrumb'><li><a href='/search'>所有产品</a></li><li><a class='active' href='/search'>"+hot_checked_brand.brand_name+"<i>x</i></a></li></ol>'")
-    }else{
-        var hot_breadcrumb = $("<ol class='breadcrumb'><li><a href='/search'>所有产品</a></li></ol>'")
-    }
+    var checked_bread_crumb = bread_crumb
     var hot_breadcrumb_div = $("<div class='col-sm-12'></div>");
-    hot_breadcrumb_div.append(hot_breadcrumb);
+    var hot_breadcrumb_ol = $("<ol class='breadcrumb'></ol>");
+    for(var i=0; i<checked_bread_crumb.length; i++){
+        var bread_crumb_li = checked_bread_crumb[i];
+        if(i==0){
+            hot_breadcrumb_li = $("<li><a href='"+bread_crumb_li.url+"'>"+bread_crumb_li.name+"</a></li>")
+        }else{
+            hot_breadcrumb_li = $("<li><a class='active' href='"+bread_crumb_li.url+"'>"+bread_crumb_li.name+"<i>x</i></a></li>")
+        }
+        hot_breadcrumb_ol.append(hot_breadcrumb_li);
+    }
+    hot_breadcrumb_div.append(hot_breadcrumb_ol);
     $("#hot_breadcrumb").append(hot_breadcrumb_div);
 }
 var initNav =function(){
@@ -45,10 +53,13 @@ var initNav =function(){
     $("#nav_menu").hover(function(){
         $("#nav_menu").show()
     },function(){
-        $("#nav_menu").hide()
+        setTimeout(function(){
+            if(!in_content){
+                $("#nav_menu").hide()
+            }
+        },100)
     });
     $("#nav_content").hover(function(){
-		$("#nav_menu").show()
 	},function(){
 		$("#nav_menu").hide()
 	});

@@ -51,7 +51,7 @@ Swin.genBaseThumbnail = function (parent_id,params,type) {
             $("#"+parent_id).append(each_div);
         }
 };
-Swin.genPageGrid = function(parent_id,params,type) {
+Swin.genPageGrid = function(parent_id,params,type,pagination) {
     params.forEach(function(each_param){
         var image_src = each_param.image;
         var each_div = $("<div class='" + type + "'></div>");
@@ -72,18 +72,55 @@ Swin.genPageGrid = function(parent_id,params,type) {
         //将每个图片和caption组成的thumbnail放入parent div
         $("#"+parent_id).append(each_div);
     });
+    var category_id = getUrlParam("category_id")
+    var brand_id = getUrlParam("brand_id")
+
+    var page = pagination.page_number
+    var total_page = pagination.total_page
+    var limit_show_page = 10
+    var start_show_page = 1
+    if(page-5>1){
+        start_show_page=page-5
+    }
+    if(total_page<start_show_page+limit_show_page-1){
+        limit_show_page=total_page-start_show_page+1
+    }
+
+    url = window.location.pathname+"?category_id="+category_id+"&brand_id="+brand_id
     var page_nav_div = $("<div class='page_nav'></div>");
     var page_nav = $('<nav aria-label="Page navigation"></nav>');
     var page_nav_ul = $('<ul class="pagination"></ul>');
-    var previous_li = $('<li><a href="#" aria-label="Previous"> <span aria-hidden="true">&laquo;</span></a></li>');
-    var next_li = $('<li><a href="#" aria-label="Next"><span aria-hidden="true">&raquo;</span></a></li>');
+    if(page==1){
+        var previous_li = $('<li class="disabled"><a href="#" aria-label="Previous"> <span aria-hidden="true">&laquo;</span></a></li>');
+    }else{
+        pre_page = parseInt(page)-1
+        var previous_li = $('<li><a href="'+url+'&page='+pre_page+'" aria-label="Previous"> <span aria-hidden="true">&laquo;</span></a></li>');
+    }
+    if(page==total_page){
+        var next_li = $('<li class="disabled"><a href="#" aria-label="Next"><span aria-hidden="true">&raquo;</span></a></li>');
+    }else{
+        next_page = parseInt(page)+1
+        var next_li = $('<li><a href="'+url+'&page='+next_page+'" aria-label="Next"><span aria-hidden="true">&raquo;</span></a></li>');
+    }
     page_nav_ul.append(previous_li);
-    for (var i=1; i<= params.length/20+1; i++){
-        page_nav_ul.append('<li><a href="#" class="page_num">'+i+'</a></li>');
+    if(start_show_page>1){
+        start_hide_page = parseInt(start_show_page)-1
+        page_nav_ul.append('<li><a href="'+url+'&page='+start_hide_page+'" class="page_num">...</a></li>');
+    }
+    for (var i=start_show_page; i<= start_show_page+limit_show_page-1; i++){
+        if(i==pagination.page_number){
+            page_nav_ul.append('<li class="active"><a href="'+url+'&page='+i+'" class="page_num">'+i+'<span class="sr-only">(current)</span></a></li>');
+        }else{
+            page_nav_ul.append('<li><a href="'+url+'&page='+i+'" class="page_num">'+i+'</a></li>');
+        }
+    }
+    if(start_show_page+limit_show_page-1<total_page){
+        end_hide_page = start_show_page+limit_show_page;
+        page_nav_ul.append('<li><a href="'+url+'&page='+end_hide_page+'" class="page_num">...</a></li>');        
     }
     page_nav_ul.append(next_li);
     page_nav_div.append(page_nav_ul);
-    $("#"+parent_id).append(page_nav_div);
+    $("#page").append(page_nav_div);
 };
 /*
  *  生成包含图片和说明的div list
@@ -136,4 +173,10 @@ Swin.genBaseGrid = function (parent_id,params) {
         }
         $("#"+parent_id).append(each_col);
     }
+}
+
+function getUrlParam(name) {
+    var reg = new RegExp("(^|&)" + name + "=([^&]*)(&|$)"); //构造一个含有目标参数的正则表达式对象
+    var r = window.location.search.substr(1).match(reg); //匹配目标参数
+    if (r != null) return unescape(r[2]); return null; //返回参数值
 }
